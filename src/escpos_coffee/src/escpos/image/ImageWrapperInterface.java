@@ -23,10 +23,7 @@
  */
 package escpos.image;
 
-/**
- *
- * @author marco
- */
+
 public interface ImageWrapperInterface {
         
     public byte[] getBytes(EscPosImage image);

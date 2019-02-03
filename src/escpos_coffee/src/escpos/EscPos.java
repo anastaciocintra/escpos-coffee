@@ -26,16 +26,11 @@
 package escpos;
 
 import escpos.image.EscPosImage;
-import escpos.barcode.BarCode;
-import escpos.barcode.QRCode;
-import escpos.barcode.PDF417;
-import java.io.ByteArrayOutputStream;
 import java.io.Closeable;
 import java.io.Flushable;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
-import java.util.List;
 import escpos.barcode.BarCodeWrapperInterface;
 import escpos.image.ImageWrapperInterface;
 
@@ -159,13 +154,15 @@ public class EscPos implements Closeable, Flushable , EscPosConst{
      * Can be used to send customized commands to printer. 
      * 
      * @param      b   the <code>byte</code>.
+     * @return     this object.
      * @exception  IOException  if an I/O error occurs. In particular,
      *             an <code>IOException</code> may be thrown if the
      *             output stream has been closed.
      * @see java.io.OutputStream#write(int) 
      */
-    public void write(int b) throws IOException {
+    public EscPos write(int b) throws IOException {
         this.outputStream.write(b);
+        return this;
     }
 
 
@@ -176,13 +173,15 @@ public class EscPos implements Closeable, Flushable , EscPosConst{
      * @param      b     the data.
      * @param      off   the start offset in the data.
      * @param      len   the number of bytes to write.
+     * @return     this object.
      * @exception  IOException  if an I/O error occurs. In particular,
      *             an <code>IOException</code> is thrown if the output
      *             stream is closed.
      * @see        java.io.OutputStream#write(byte[], int, int)
      */
-    public void write(byte b[], int off, int len) throws IOException {
+    public EscPos write(byte b[], int off, int len) throws IOException {
         this.outputStream.write(b, off, len);
+        return this;
     }
 
 
@@ -210,9 +209,11 @@ public class EscPos implements Closeable, Flushable , EscPosConst{
     /**
      * Each write will be send to output Stream.
      * @param outputStream value to be used on writes
+     * @return this object.
      */
-    public void setOutputStream(OutputStream outputStream) {
+    public EscPos setOutputStream(OutputStream outputStream) {
         this.outputStream = outputStream;
+        return this;
     }
     
     /**
@@ -248,12 +249,14 @@ public class EscPos implements Closeable, Flushable , EscPosConst{
     /**
      * Set charsetName used on encodes of Strings.
      * @param charsetName value used on String.getBytes
+     * @return this object.
      * @see java.lang.String#getBytes(java.lang.String) 
      * @see #write(java.lang.String) 
      * @see #writeLF(java.lang.String) 
      */
-    public final void setCharsetName(String charsetName) {
+    public final EscPos setCharsetName(String charsetName) {
         this.charsetName = charsetName;
+        return this;
     }
 
     /**
@@ -275,12 +278,14 @@ public class EscPos implements Closeable, Flushable , EscPosConst{
      * you call <code>write</code> with String parameter, then you can send special characters.
      * 
      * @param table  character table possibilities
+     * @return this object.
      * @exception  IOException  if an I/O error occurs.
      * @exception  IllegalArgumentException if characterCodeTable out of range 0 to 255
      */
-    public void setCharacterCodeTable(CharacterCodeTable table) throws IOException, IllegalArgumentException{
+    public EscPos setCharacterCodeTable(CharacterCodeTable table) throws IOException, IllegalArgumentException{
         setCharsetName(table.charsetName);
         setPrinterCharacterTable(table.value);
+        return this;
         
     }
     
@@ -293,10 +298,11 @@ public class EscPos implements Closeable, Flushable , EscPosConst{
      * ASCII ESC t n
      * 
      * @param characterCodeTable code of table on printer to be selected.
+     * @return this object.
      * @exception  IOException  if an I/O error occurs.
      * @exception  IllegalArgumentException if characterCodeTable out of range 0 to 255
      */
-    public void setPrinterCharacterTable(int characterCodeTable) throws IOException, IllegalArgumentException{
+    public EscPos setPrinterCharacterTable(int characterCodeTable) throws IOException, IllegalArgumentException{
         if(characterCodeTable < 0 || characterCodeTable > 255){
             throw new IllegalArgumentException("characterCodeTable must be between 0 and 255" );
         }
@@ -304,6 +310,7 @@ public class EscPos implements Closeable, Flushable , EscPosConst{
         write(ESC);
         write('t');
         write(characterCodeTable);
+        return this;
     }
     
     
@@ -514,41 +521,27 @@ public class EscPos implements Closeable, Flushable , EscPosConst{
     }
     
     
+    
+    public EscPos info() throws UnsupportedEncodingException, IOException{
+        Style title = new Style()
+                .setFontSize(Style.FontSize._3, Style.FontSize._3)
+                .setColorMode(Style.ColorMode.WhiteOnBlack)
+                .setJustification(Justification.Center);
+        write(title, "EscPos Coffee");
+        feed(5);
+        writeLF("java driver for ESC/POS commands.");
+        writeLF("Version: " + version);
+        feed(3);
+        getStyle().setJustification(Justification.Right);
+        writeLF("github.com");
+        writeLF("anastaciocintra/escpos-coffee");
+        feed(5);
+        cut(CutMode.FULL);
+        return this;
+    }
 
     
 
-    
-    
-    
-    
-    
-    
-    
-//    public void printStored() throws IOException{
-//        // GS ( L 6 0 48 69 kc1 kc2 x y
-//        write(GS);
-//        write('(');
-//        write('L');
-//        write(6);
-//        write(0);
-//        write(48);
-//        write(69);
-//        //kc1, kc2
-//        write(32);
-//        write(32);
-//        write(1);
-//        write(1);
-//
-//        //m
-//        write(48);
-//        //fn
-//        write(50);
-//         
-//    }
-    
-    
-    
-    
     
     
 
