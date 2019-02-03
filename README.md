@@ -12,4 +12,9 @@ See complete code on src/samples/getstart directory
   escpos.feed(5);
   escpos.cut(EscPos.CutMode.FULL);
 ```
+## Compiling
+The lib and samples was made with Netbeans 8.2 and can compile with ant:
+```
+ant  jar
+```
 
