@@ -4,8 +4,7 @@ Java library for ESC/POS printer commands. Can send text, images and barcodes to
 All commands are send to one OutputStream, than you can redirect to printer, file or network.
 
 ## Getting Start
-Sending
-See complete code on src/samples/getstart directory
+Sending hello world to printer.
 ```
   EscPos escpos = new EscPos(System.out);
   escpos.writeLF("Hello Wold");
