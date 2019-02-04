@@ -1,76 +1,50 @@
+
 package getstart;
 
 import escpos.EscPos;
-import java.awt.print.PrinterJob;
 import java.io.IOException;
-import java.io.PipedInputStream;
-import java.io.PipedOutputStream;
+import java.lang.Thread.UncaughtExceptionHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.print.Doc;
-import javax.print.DocFlavor;
-import javax.print.DocPrintJob;
-import javax.print.PrintException;
 import javax.print.PrintService;
-import javax.print.PrintServiceLookup;
-import javax.print.SimpleDoc;
-import javax.swing.SwingUtilities;
+import output.PrinterOutputStream;
 
 public class Getstart {
-    public void printinfo(){
+    public void printInfo(String printerName){
+        // UncaughtExceptionHandler this class is used to catch errors that 
+        // might happen in the print thread.
+        UncaughtExceptionHandler uncaughtException = (Thread t, Throwable e) -> {
+            Logger.getLogger(Getstart.class.getName()).log(Level.SEVERE, null, e);
+        };  
+        //this call is slow, try to use it only once and reuse the PrintService variable.
+        PrintService printService = PrinterOutputStream.getPrintServiceByName(printerName);
         try {
-
-        DocFlavor df = DocFlavor.INPUT_STREAM.AUTOSENSE;
-        PipedOutputStream pos = new PipedOutputStream();
-        PipedInputStream pis = new PipedInputStream(pos);
-//        EscPos os = new EscPos(pos);
-        Doc d = new SimpleDoc(pis, df, null);
-//        PrintService P = PrintServiceLookup.lookupDefaultPrintService();
-        PrintService P = getPrintByName("epson tm-t20");
-        ;
-
-        if (P != null) {
-            DocPrintJob job = P.createPrintJob();
-            SwingUtilities.invokeLater(new Runnable() {
-                @Override
-                public void run() {
-                    try {
-                        job.print(d, null);
-                    } catch (PrintException ex) {
-                    }
-                }
-            });
-        }
-
-
-            EscPos escpos = new EscPos(pos);
-//            escpos.info();
-            escpos.writeLF("Hello Wold");
-            escpos.feed(5);
-            escpos.cut(EscPos.CutMode.FULL);
-            pos.close();
+            EscPos escpos = new EscPos(new PrinterOutputStream(printService, uncaughtException));
+            escpos.info();
+            // do not forget to close...
+            escpos.close();
+            
         } catch (IOException ex) {
             Logger.getLogger(Getstart.class.getName()).log(Level.SEVERE, null, ex);
         }
         
     }
-    private PrintService getPrintByName(String printerName){
-    PrintService[] services = PrinterJob.lookupPrintServices();
-        PrintService service = null;
-        // Retrieve a print service from the array
-        for (int index = 0; service == null && index < services.length; index++) {
 
-            if (services[index].getName().compareToIgnoreCase(printerName) == 0) {
-                service = services[index];
-                break;
+        public static void main(String[] args) {
+            if(args.length!=1){
+                System.out.println("Usage: java -jar getstart.jar (\"printer name\")");
+                System.out.println("Printer list to use:");
+                String[] printServicesNames = PrinterOutputStream.getListPrintServicesNames();
+                for(String printServiceName: printServicesNames){
+                    System.out.println(printServiceName);
+                }
+                
+                System.exit(0);
             }
-        }        
-        return service;
+            Getstart obj = new Getstart();
+            obj.printInfo(args[0]);
 
-    }
-    public static void main(String[] args) {
-        Getstart obj = new Getstart();
-        obj.printinfo();
+        
     }
     
 }
