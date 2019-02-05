@@ -73,7 +73,7 @@ public class BarcodeSample {
             escpos.feed(3);
             
             escpos.feed(5);
-            escpos.cut(EscPos.CutMode.FULL);
+            escpos.cut(EscPos.CutMode.PART);
             
             
             escpos.writeLF(title,"QR Code");
@@ -91,6 +91,9 @@ public class BarcodeSample {
             qrcode.setJustification(EscPosConst.Justification.Center);
             escpos.write(qrcode, "hello qrcode");
             escpos.feed(3);
+
+            escpos.feed(5);
+            escpos.cut(EscPos.CutMode.PART);
             
             escpos.writeLF(title,"PDF 417");
             escpos.feed(2);
