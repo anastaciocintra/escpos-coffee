@@ -28,69 +28,69 @@ public class BarcodeSample {
                     .setFontSize(Style.FontSize._2, Style.FontSize._2)
                     .setJustification(EscPosConst.Justification.Center);
             
-//            escpos.writeLF(title,"Barcode");
-//            escpos.feed(2);
-//            BarCode barcode = new BarCode();
-//
-//            escpos.writeLF("barcode default options CODE93 system");
-//            escpos.feed(2);
-//            escpos.write(barcode, "hello barcode");
-//            escpos.feed(3);
-//
-//            escpos.writeLF("barcode write HRI above");
-//            barcode.setHRIPosition(BarCode.BarCodeHRIPosition.AboveBarCode);
-//            escpos.feed(2);
-//            escpos.write(barcode, "hello barcode");
-//            escpos.feed(3);
-//
-//            escpos.writeLF("barcode write HRI below");
-//            barcode.setHRIPosition(BarCode.BarCodeHRIPosition.BelowBarCode);
-//            escpos.feed(2);
-//            escpos.write(barcode, "hello barcode");
-//            escpos.feed(3);
-//            
-//            escpos.writeLF("barcode right justification ");
-//            barcode.setHRIPosition(BarCode.BarCodeHRIPosition.NotPrinted_Default);
-//            barcode.setJustification(EscPosConst.Justification.Right);
-//            escpos.feed(2);
-//            escpos.write(barcode, "hello barcode");
-//            escpos.feed(3);
-//
-//            escpos.writeLF("barcode height 200 ");
-//            barcode.setJustification(EscPosConst.Justification.Left_Default);
-//            barcode.setBarCodeSize(2, 200);
-//            escpos.feed(2);
-//            escpos.write(barcode, "hello barcode");
-//            escpos.feed(3);
-//            
-//
-//            escpos.writeLF("barcode UPCA system ");
-//            barcode.setSystem(BarCode.BarCodeSystem.UPCA);
-//            barcode.setHRIPosition(BarCode.BarCodeHRIPosition.BelowBarCode);
-//            barcode.setBarCodeSize(2, 100);
-//            escpos.feed(2);
-//            escpos.write(barcode, "12345678901");
-//            escpos.feed(3);
-//            
-//            escpos.feed(5);
-//            escpos.cut(EscPos.CutMode.FULL);
-//            
+            escpos.writeLF(title,"Barcode");
+            escpos.feed(2);
+            BarCode barcode = new BarCode();
+
+            escpos.writeLF("barcode default options CODE93 system");
+            escpos.feed(2);
+            escpos.write(barcode, "hello barcode");
+            escpos.feed(3);
+
+            escpos.writeLF("barcode write HRI above");
+            barcode.setHRIPosition(BarCode.BarCodeHRIPosition.AboveBarCode);
+            escpos.feed(2);
+            escpos.write(barcode, "hello barcode");
+            escpos.feed(3);
+
+            escpos.writeLF("barcode write HRI below");
+            barcode.setHRIPosition(BarCode.BarCodeHRIPosition.BelowBarCode);
+            escpos.feed(2);
+            escpos.write(barcode, "hello barcode");
+            escpos.feed(3);
             
-//            escpos.writeLF(title,"QR Code");
-//            escpos.feed(2);
-//            QRCode qrcode = new QRCode();
-//
-//            escpos.writeLF("QRCode default options");
-//            escpos.feed(2);
-//            escpos.write(qrcode, "hello qrcode");
-//            escpos.feed(3);
-//
-//            escpos.writeLF("QRCode size 6 and center justified");
-//            escpos.feed(2);
-//            qrcode.setSize(7);
-//            qrcode.setJustification(EscPosConst.Justification.Center);
-//            escpos.write(qrcode, "hello qrcode");
-//            escpos.feed(3);
+            escpos.writeLF("barcode right justification ");
+            barcode.setHRIPosition(BarCode.BarCodeHRIPosition.NotPrinted_Default);
+            barcode.setJustification(EscPosConst.Justification.Right);
+            escpos.feed(2);
+            escpos.write(barcode, "hello barcode");
+            escpos.feed(3);
+
+            escpos.writeLF("barcode height 200 ");
+            barcode.setJustification(EscPosConst.Justification.Left_Default);
+            barcode.setBarCodeSize(2, 200);
+            escpos.feed(2);
+            escpos.write(barcode, "hello barcode");
+            escpos.feed(3);
+            
+
+            escpos.writeLF("barcode UPCA system ");
+            barcode.setSystem(BarCode.BarCodeSystem.UPCA);
+            barcode.setHRIPosition(BarCode.BarCodeHRIPosition.BelowBarCode);
+            barcode.setBarCodeSize(2, 100);
+            escpos.feed(2);
+            escpos.write(barcode, "12345678901");
+            escpos.feed(3);
+            
+            escpos.feed(5);
+            escpos.cut(EscPos.CutMode.FULL);
+            
+            
+            escpos.writeLF(title,"QR Code");
+            escpos.feed(2);
+            QRCode qrcode = new QRCode();
+
+            escpos.writeLF("QRCode default options");
+            escpos.feed(2);
+            escpos.write(qrcode, "hello qrcode");
+            escpos.feed(3);
+
+            escpos.writeLF("QRCode size 6 and center justified");
+            escpos.feed(2);
+            qrcode.setSize(7);
+            qrcode.setJustification(EscPosConst.Justification.Center);
+            escpos.write(qrcode, "hello qrcode");
+            escpos.feed(3);
             
             escpos.writeLF(title,"PDF 417");
             escpos.feed(2);
