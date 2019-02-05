@@ -57,7 +57,7 @@ java -jar samplename.jar "printer name"
 Simply send info of the library to the printer.
 
 ### textstyle
-Show how to construnct one simple receipt.
+Shows how to construnct one simple receipt.
 Also this sample show how simple is to create diferent text styles, like title, subtitle, bold, etc.
 ```
   Style title = new Style()
@@ -66,7 +66,7 @@ Also this sample show how simple is to create diferent text styles, like title, 
 ```
 
 ### graphicsimage, bitimage and rasterimage
-Show how to work with ImageWrapper.
+Shows how to work with ImageWrapper.
 Then you will see things like how to print on center-justified one image, like this: 
 ```
     escpos.writeLF("print on Center");
@@ -75,7 +75,7 @@ Then you will see things like how to print on center-justified one image, like t
 ```
 
 ### dithering
-Show how to work with BitonalThreshold and BitonalOrderedDither. 
+Shows how to work with BitonalThreshold and BitonalOrderedDither. 
 Bellow, we can see how to use ordered dither class.
 ```
   algorithm = new BitonalOrderedDither();
@@ -91,3 +91,16 @@ Bellow, code to send barcode to the printer
   BarCode barcode = new BarCode();
   escpos.write(barcode, "hello barcode");
 ```
+
+### codetable
+Shows how to send texts from different languages.
+```
+  escpos.setCharacterCodeTable(CharacterCodeTable.CP863_Canadian_French);
+  escpos.writeLF("Liberté et Fraternité.");
+```
+
+## Versioning
+Used [SemVer](https://semver.org) for versioning.
+
+
+
