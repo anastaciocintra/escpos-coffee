@@ -28,12 +28,12 @@ Sending hello world to system out:
 ```
 See on samples directory to view more codes.
 
-# Installing
+### Installing
 Download compiled library from the last release;
 Include jar lib on your project.
 
 
-# Compiling
+### Compiling
 I used the following development tools. But it might work with other versions or even another tools.
 Apache Ant(TM) version 1.10.5
 Netbeans 8.2
@@ -53,10 +53,10 @@ how to run samples:
 java -jar samplename.jar "printer name"
 ```
 
-# getstart
+### getstart
 Simply send info of the library to the printer.
 
-# textstyle
+### textstyle
 Show how to construnct one simple receipt.
 Also this sample show how simple is to create diferent text styles, like title, subtitle, bold, etc.
 ```
@@ -65,5 +65,13 @@ Also this sample show how simple is to create diferent text styles, like title, 
           .setJustification(EscPosConst.Justification.Center);
 ```
 
+### graphicsimage, bitimage and rasterimage
+Show how to work with ImageWrapper to print images.
+Then you will see things like how to print on center-justified one image, like this: 
+```
+    escpos.writeLF("print on Center");
+    imageWrapper.setJustification(EscPosConst.Justification.Center);
+    escpos.write(imageWrapper, escposImage);
+```
 
 
