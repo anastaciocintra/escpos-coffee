@@ -100,7 +100,7 @@ Shows how to send texts from different languages.
 ```
 
 ## Versioning
-Used [SemVer](https://semver.org) for versioning.
+Using [SemVer](https://semver.org) for versioning.
 
 
 
