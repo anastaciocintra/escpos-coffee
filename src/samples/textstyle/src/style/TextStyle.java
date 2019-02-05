@@ -5,7 +5,6 @@ import escpos.EscPos;
 import escpos.EscPosConst;
 import escpos.Style;
 import java.io.IOException;
-import java.lang.Thread.UncaughtExceptionHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.print.PrintService;
@@ -62,7 +61,7 @@ public class TextStyle {
 
     public static void main(String[] args) {
             if(args.length!=1){
-                System.out.println("Usage: java -jar style.jar (\"printer name\")");
+            System.out.println("Usage: java -jar xyz.jar (\"printer name\")");
                 System.out.println("Printer list to use:");
                 String[] printServicesNames = PrinterOutputStream.getListPrintServicesNames();
                 for(String printServiceName: printServicesNames){

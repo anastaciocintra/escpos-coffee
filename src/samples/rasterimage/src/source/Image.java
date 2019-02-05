@@ -107,7 +107,7 @@ public class Image {
 
     public static void main(String[] args) {
         if (args.length != 1) {
-            System.out.println("Usage: java -jar image.jar (\"printer name\")");
+            System.out.println("Usage: java -jar xyz.jar (\"printer name\")");
             System.out.println("Printer list to use:");
             String[] printServicesNames = PrinterOutputStream.getListPrintServicesNames();
             for (String printServiceName : printServicesNames) {

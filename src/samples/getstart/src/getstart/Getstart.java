@@ -3,7 +3,6 @@ package getstart;
 
 import escpos.EscPos;
 import java.io.IOException;
-import java.lang.Thread.UncaughtExceptionHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.print.PrintService;
