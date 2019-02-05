@@ -14,6 +14,8 @@ Creating printer output stream:
   escpos.writeLF("Hello Wold");
   escpos.feed(5);
   escpos.cut(EscPos.CutMode.FULL);
+  escpos.close();
+
 ```
 
 Sending hello world to system out:
@@ -22,6 +24,7 @@ Sending hello world to system out:
   escpos.writeLF("Hello Wold");
   escpos.feed(5);
   escpos.cut(EscPos.CutMode.FULL);
+  escpos.close();
 ```
 See on samples directory to view more codes.
 
@@ -42,16 +45,25 @@ cd src/escpos_coffee
 ant clean
 ant  jar
 ```
+
 ## Samples
 You can find samples code on src/samples directory.
-running:
+how to run samples:
 ```
 java -jar samplename.jar "printer name"
 ```
-coding:
-# getstart
 
-Simply print info of the library.
+# getstart
+Simply send info of the library to the printer.
+
+# textstyle
+Show how to construnct one simple receipt.
+Also this sample show how simple is to create diferent text styles, like title, subtitle, bold, etc.
+```
+  Style title = new Style()
+          .setFontSize(Style.FontSize._3, Style.FontSize._3)
+          .setJustification(EscPosConst.Justification.Center);
+```
 
 
 
