@@ -73,5 +73,13 @@ Then you will see things like how to print on center-justified one image, like t
     imageWrapper.setJustification(EscPosConst.Justification.Center);
     escpos.write(imageWrapper, escposImage);
 ```
+### dithering
+Show how to work with BitonalThreshold and BitonalOrderedDither. 
+Bellow, we can see how to use ordered dither class.
+```
+  algorithm = new BitonalOrderedDither();
+  escposImage = new EscPosImage(imageBufferedImage, algorithm);     
+  escpos.write(imageWrapper, escposImage);
 
+```
 
