@@ -29,7 +29,7 @@ import java.io.ByteArrayOutputStream;
 
 /**
  * Supply ESC/POS Graphics print Image commands.<p>
- * using <code>GS 'v' '0'</code>
+ * using <code>GS(L</code>
  */
 public class GraphicsImageWrapper implements EscPosConst, ImageWrapperInterface{
     

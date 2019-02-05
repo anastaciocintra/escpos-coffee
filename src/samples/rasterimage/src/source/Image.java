@@ -7,7 +7,7 @@ import escpos.Style;
 import escpos.image.Bitonal;
 import escpos.image.BitonalThreshold;
 import escpos.image.EscPosImage;
-import escpos.image.GraphicsImageWrapper;
+import escpos.image.RasterBitImageWrapper;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.net.URL;
@@ -42,37 +42,38 @@ public class Image {
             BufferedImage  githubBufferedImage = ImageIO.read(githubURL);
             EscPosImage escposImage = new EscPosImage(githubBufferedImage, algorithm);     
             
-            // this wrapper uses esc/pos sequence: "GS(L"
-            GraphicsImageWrapper imageWrapper = new GraphicsImageWrapper();
+            // this wrapper uses esc/pos sequence: "GS 'v' '0'"
+            RasterBitImageWrapper imageWrapper = new RasterBitImageWrapper();
 
             
             
             escpos = new EscPos(new PrinterOutputStream(printService));
             
+            
             escpos.writeLF(new Style().setFontSize(Style.FontSize._2, Style.FontSize._2)
-                    ,"GraphicsImageWrapper");
-
+                    ,"RasterBitImageWrapper");
+            
             escpos.writeLF("default size");
             escpos.write(imageWrapper, escposImage);
             
             escpos.feed(5);
             escpos.writeLF("Double Height");
-            imageWrapper.setGraphicsImageBxBy(GraphicsImageWrapper.GraphicsImageBxBy.DoubleHeight);
+            imageWrapper.setRasterBitImageMode(RasterBitImageWrapper.RasterBitImageMode.DoubleHeight);
             escpos.write(imageWrapper, escposImage);
 
             escpos.feed(5);
             escpos.writeLF("Double Width");
-            imageWrapper.setGraphicsImageBxBy(GraphicsImageWrapper.GraphicsImageBxBy.DoubleWidth);
+            imageWrapper.setRasterBitImageMode(RasterBitImageWrapper.RasterBitImageMode.DoubleWidth);
             escpos.write(imageWrapper, escposImage);
 
             escpos.feed(5);
             escpos.writeLF("Quadruple size");
-            imageWrapper.setGraphicsImageBxBy(GraphicsImageWrapper.GraphicsImageBxBy.Quadruple);
+            imageWrapper.setRasterBitImageMode(RasterBitImageWrapper.RasterBitImageMode.Quadruple);
             escpos.write(imageWrapper, escposImage);
 
             escpos.feed(5);
             escpos.writeLF("print on Left");
-            imageWrapper.setGraphicsImageBxBy(GraphicsImageWrapper.GraphicsImageBxBy.Normal_Default);
+            imageWrapper.setRasterBitImageMode(RasterBitImageWrapper.RasterBitImageMode.Normal_Default);
             imageWrapper.setJustification(EscPosConst.Justification.Left_Default);
             escpos.write(imageWrapper, escposImage);
             escpos.feed(5);
