@@ -103,4 +103,8 @@ Shows how to send texts from different languages.
 Using [SemVer](https://semver.org) for versioning.
 
 
+## Acknowledgments
+I would like to thanks [Michael Billington](https://github.com/mike42) and contributors for the great work on the [mike42/escpos-php](https://github.com/mike42/escpos-php) project that inspired me to start this project.
+
+
 
