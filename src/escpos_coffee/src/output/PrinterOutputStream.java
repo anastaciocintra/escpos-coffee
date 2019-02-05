@@ -28,6 +28,8 @@ import java.io.IOException;
 import java.io.PipedInputStream;
 import java.io.PipedOutputStream;
 import java.lang.Thread.UncaughtExceptionHandler;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.print.Doc;
 import javax.print.DocFlavor;
 import javax.print.DocPrintJob;
@@ -40,44 +42,33 @@ import javax.print.SimpleDoc;
 /**
  * Supply OutputStream to the printer. <p>
  * PrinterOutputStream send data directing to the printer. The instance cannot
- * be reused, the last command is <code>close()</code>, 
+ * be reused and the last command should be <code>close()</code>, 
  * after that, you need to create another instance to send data to the printer.
  */
 public class PrinterOutputStream extends PipedOutputStream {
 
-    private final PrintService printService;
     private final PipedInputStream pipedInputStream;
+    private final Thread threadPrint;
 
     /**
-     * creates one instance of PrinterOutputStream.
+     * creates one instance of PrinterOutputStream. <p>
+     * Create one print based on print service.
+     * Start print job  linked (this) output stream.
      * @param printService value used to create the printer job
-     * @param uncaughtException because print job run in another thread, 
-     * them its parameter is used to caught errors.
      * @exception  IOException  if an I/O error occurs.
      * @see #getPrintServiceByName(java.lang.String) 
      * @see #getDefaultPrintService() 
-     * @see #backgroundPrint(java.lang.Thread.UncaughtExceptionHandler) 
      */
-    public PrinterOutputStream(PrintService printService, UncaughtExceptionHandler uncaughtException) throws IOException {
-        this.printService = printService;
+    public PrinterOutputStream(PrintService printService) throws IOException {
+        
+        UncaughtExceptionHandler uncaughtException = (Thread t, Throwable e) -> {
+            Logger.getLogger(PrinterOutputStream.class.getName()).log(Level.SEVERE, null, e);
+        };
 
         pipedInputStream = new PipedInputStream();
         super.connect(pipedInputStream);
-        backgroundPrint(uncaughtException);
-    }
-
-
-
-    /**
-     * Send stream to the printer. <p>
-     * Created automatically after constructor, this function runs in background 
-     * and will finish only when close is called.
-     * 
-     * @param uncaughtException because print job run in another thread, 
-     * them its parameter is used to caught errors.
-     * @exception  IOException  if an I/O error occurs.
-     */
-    private void backgroundPrint(UncaughtExceptionHandler uncaughtException) throws IOException {
+        
+        
         Runnable runnablePrint = () -> {
             try {
                 DocFlavor df = DocFlavor.INPUT_STREAM.AUTOSENSE;
@@ -90,10 +81,31 @@ public class PrinterOutputStream extends PipedOutputStream {
             }
         };
 
-        Thread threadPrint = new Thread(runnablePrint);
+        threadPrint = new Thread(runnablePrint);
         threadPrint.setUncaughtExceptionHandler(uncaughtException);
         threadPrint.start();
     }
+    
+    /**
+     * creates one instance of PrinterOutputStream with default print service. <p>
+     * @exception  IOException  if an I/O error occurs.
+     * @see #PrinterOutputStream(javax.print.PrintService) 
+     * @see #getDefaultPrintService() 
+     */
+    public PrinterOutputStream() throws IOException{
+        this(getDefaultPrintService());
+    }
+    
+    /**
+     * Set UncaughtExceptionHandler to make special error treatment. <p>
+     * Make special treatment of errors on your code.
+     * @param uncaughtException used on (another thread) print.
+     */
+    public void setUncaughtException(UncaughtExceptionHandler uncaughtException) {
+        threadPrint.setUncaughtExceptionHandler(uncaughtException);
+    }
+    
+
 
     /**
      * Get the name of all printers on the system.

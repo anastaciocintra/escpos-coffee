@@ -355,7 +355,7 @@ public class EscPos implements Closeable, Flushable , EscPosConst{
     
     
     /**
-     * Calls write feed on end. 
+     * Calls write and feed on end. 
      * 
      * @param style value to be send.
      * @param text content to be send.
@@ -375,8 +375,9 @@ public class EscPos implements Closeable, Flushable , EscPosConst{
     }
 
     /**
-     * Calls writeLF with default style. 
-     * 
+     * Calls write and feed on end. 
+     * The style to be used is de default. You can configure this default style
+     * using {@link #getStyle() getStyle} and/or {@link #setStyle(escpos.Style)  setStyle}
      * @param text content to be send.
      * @return this object.
      * @exception  UnsupportedEncodingException
@@ -385,6 +386,8 @@ public class EscPos implements Closeable, Flushable , EscPosConst{
      *             an <code>IOException</code> is thrown if the output
      *             stream is closed.
      * @see #writeLF(escpos.Style, java.lang.String) 
+     * @see #setStyle(escpos.Style) 
+     * @see #getStyle() 
      */
     public EscPos writeLF(String text) throws UnsupportedEncodingException, IOException{
         return writeLF(style, text);
