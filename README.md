@@ -66,13 +66,14 @@ Also this sample show how simple is to create diferent text styles, like title, 
 ```
 
 ### graphicsimage, bitimage and rasterimage
-Show how to work with ImageWrapper to print images.
+Show how to work with ImageWrapper.
 Then you will see things like how to print on center-justified one image, like this: 
 ```
     escpos.writeLF("print on Center");
     imageWrapper.setJustification(EscPosConst.Justification.Center);
     escpos.write(imageWrapper, escposImage);
 ```
+
 ### dithering
 Show how to work with BitonalThreshold and BitonalOrderedDither. 
 Bellow, we can see how to use ordered dither class.
@@ -82,4 +83,11 @@ Bellow, we can see how to use ordered dither class.
   escpos.write(imageWrapper, escposImage);
 
 ```
+### barcode
+Samples of barcode, PDF417 and qrcode.
+Bellow, code to send barcode to the printer
 
+```
+  BarCode barcode = new BarCode();
+  escpos.write(barcode, "hello barcode");
+```
