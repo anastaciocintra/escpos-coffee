@@ -6,7 +6,7 @@ please follow it in all your interactions with the project.
 
 
 # Licensing of contributed material
-This project is under MIT licence, see the link: [LICENCE](https://github.com/anastaciocintra/escpos-coffee/blob/master/LICENSE) 
+This project is under MIT licence, see [LICENSE](https://github.com/anastaciocintra/escpos-coffee/blob/master/LICENSE) 
 
 Keep in mind as you contribute, that code, docs and other material submitted to this project will be considered licensed 
 under the same terms as the rest of the work.
