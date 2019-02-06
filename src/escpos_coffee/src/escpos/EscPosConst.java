@@ -10,7 +10,7 @@ public interface EscPosConst {
     /**
      *
      */
-    public final String version = "1.0.0";
+    public final String version = "1.0.1";
     public final int NUL = 0;
     public final int LF  = 10;
     public  final int ESC = 27;
