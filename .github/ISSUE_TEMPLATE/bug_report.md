@@ -7,12 +7,6 @@ assignees: ''
 
 ---
 
-<!--
-
-Have you read escpos-coffee's Code of Conduct? By filing an Issue, you are expected to comply with it, including treating everyone with respect: https://github.com/anastaciocintra/escpos-coffee/blob/master/CODE_OF_CONDUCT.md
-
--->
-
 **Describe the bug**
 A clear and concise description of what the bug is.
 
