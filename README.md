@@ -102,6 +102,9 @@ Shows how to send texts from different languages.
 ## Versioning
 Using [SemVer](https://semver.org) for versioning.
 
+## Contributting 
+Contributors are wellcome, 
+but before you do it its important to read and agree with [CODE_OF_CONDUCT.md] (https://github.com/anastaciocintra/escpos-coffee/blob/master/CODE_OF_CONDUCT.md) and [CONTRIBUTING.md](https://github.com/anastaciocintra/escpos-coffee/blob/master/CONTRIBUTING.md).
 
 ## Acknowledgments
 I would like to thanks [Michael Billington](https://github.com/mike42) and contributors for the great work on the [mike42/escpos-php](https://github.com/mike42/escpos-php) project that inspired me to start this project.
