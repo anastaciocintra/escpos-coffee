@@ -16,8 +16,11 @@ under the same terms as the rest of the work.
 ### Copyright
 All code files should have this header:
 ```
-// Use of this source code is governed by the MIT license that can be
-// found in the LICENSE file.
+/*
+ * Use of this source code is governed by the MIT license that can be
+ * found in the LICENSE file.
+ */
+
 ```
 Then you do not need to put your name with copyright on files.
 
