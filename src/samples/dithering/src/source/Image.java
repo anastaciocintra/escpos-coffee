@@ -1,10 +1,12 @@
+/*
+ * Use of this source code is governed by the MIT license that can be
+ * found in the LICENSE file.
+ */
 
 package source;
 
 import escpos.EscPos;
-import escpos.EscPosConst;
 import escpos.Style;
-import escpos.image.BitImageWrapper;
 import escpos.image.Bitonal;
 import escpos.image.BitonalOrderedDither;
 import escpos.image.BitonalThreshold;
