@@ -7,6 +7,13 @@ assignees: ''
 
 ---
 
+<!--
+
+Have you read Atom's Code of Conduct? By filing an Issue, you are expected to comply with it, including treating everyone with respect: https://github.com/anastaciocintra/escpos-coffee/blob/master/CODE_OF_CONDUCT.md
+
+-->
+
+
 **Is your feature request related to a problem? Please describe.**
 A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
 
