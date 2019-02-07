@@ -21,3 +21,30 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+/src/samples/barcode/nbproject/private/
+/src/samples/bitimage/nbproject/private/
+/src/samples/charcode/nbproject/private/
+/src/samples/dithering/nbproject/private/
+/src/samples/getstart/nbproject/private/
+/src/samples/graphicsImage/nbproject/private/
+/src/samples/rasterimage/nbproject/private/
+/src/samples/textstyle/nbproject/private/
+/src/escpos_coffee/nbproject/private/
+/src/escpos_coffee/build/
+/src/escpos_coffee/dist/
+/src/samples/barcode/build/
+/src/samples/barcode/dist/
+/src/samples/bitimage/build/
+/src/samples/bitimage/dist/
+/src/samples/charcode/dist/
+/src/samples/charcode/build/
+/src/samples/dithering/dist/
+/src/samples/dithering/build/
+/src/samples/getstart/build/
+/src/samples/getstart/dist/
+/src/samples/graphicsImage/build/
+/src/samples/graphicsImage/dist/
+/src/samples/rasterimage/build/
+/src/samples/rasterimage/dist/
+/src/samples/textstyle/build/
+/src/samples/textstyle/dist/
