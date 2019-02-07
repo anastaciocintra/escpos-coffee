@@ -28,22 +28,29 @@ Sending hello world to system out:
 ```
 See on samples directory to view more codes.
 
-### Installing
-Download compiled library from the last release;
-Include jar lib on your project.
+
+
+### Downloading
+Download the [last release of escpos-coffee](https://github.com/anastaciocintra/escpos-coffee/releases/latest).
+
+
 
 
 ### Compiling
 I used the following development tools. But it might work with other versions or even another tools.
+
 Apache Ant(TM) version 1.10.5
+
 Netbeans 8.2
+
 java version "1.8.0_172"
 
-The lib and samples can be compiled with above commands:
+The project can be compiled with below commands:
 ```
 cd src/escpos_coffee
 ant clean
 ant  jar
+ant javadoc
 ```
 
 ## Samples
