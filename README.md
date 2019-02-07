@@ -31,7 +31,7 @@ See on samples directory to view more codes.
 
 
 ### Downloading
-Download the [last release of escpos-coffee](https://github.com/anastaciocintra/escpos-coffee/releases/latest).
+Download code and binaries from the [last release of escpos-coffee](https://github.com/anastaciocintra/escpos-coffee/releases/latest).
 
 
 
