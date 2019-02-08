@@ -55,6 +55,7 @@ ant javadoc
 
 ## Samples
 You can find samples code on src/samples directory.
+Download the binaries [here](https://github.com/anastaciocintra/escpos-coffee/releases/latest).
 how to run samples:
 ```
 java -jar samplename.jar "printer name"
