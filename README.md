@@ -61,20 +61,33 @@ how to run samples:
 java -jar samplename.jar "printer name"
 ```
 
-### getstart
-Simply send info of the library to the printer.
+### getstart.jar
+Send info of the library to the printer.
 
-### textstyle
+![output](sample_images/info.png?raw=true "output")
+
+
+### textstyle.jar
+
 Shows how to construnct one simple receipt.
+
+![output](sample_images/style.png?raw=true "output")
+
+
 Also this sample show how simple is to create diferent text styles, like title, subtitle, bold, etc.
+
 ```
   Style title = new Style()
           .setFontSize(Style.FontSize._3, Style.FontSize._3)
           .setJustification(EscPosConst.Justification.Center);
 ```
 
-### graphicsimage, bitimage and rasterimage
+
+
+### graphicsimage.jar, bitimage.jar and rasterimage.jar
+
 Shows how to work with ImageWrapper.
+
 Then you will see things like how to print on center-justified one image, like this: 
 ```
     escpos.writeLF("print on Center");
@@ -82,8 +95,15 @@ Then you will see things like how to print on center-justified one image, like t
     escpos.write(imageWrapper, escposImage);
 ```
 
-### dithering
+### dithering.jar
+
 Shows how to work with BitonalThreshold and BitonalOrderedDither. 
+
+![output](sample_images/threshould.png?raw=true "output")
+
+![output](sample_images/ordered_dither.png?raw=true "output")
+
+
 Bellow, we can see how to use ordered dither class.
 ```
   algorithm = new BitonalOrderedDither();
@@ -91,8 +111,17 @@ Bellow, we can see how to use ordered dither class.
   escpos.write(imageWrapper, escposImage);
 
 ```
-### barcode
+### barcode.jar
+
 Samples of barcode, PDF417 and qrcode.
+
+![output](sample_images/barcode.png?raw=true "output")
+
+![output](sample_images/qrcode.png?raw=true "output")
+
+![output](sample_images/pdf417.png?raw=true "output")
+
+
 Bellow, code to send barcode to the printer
 
 ```
@@ -100,7 +129,7 @@ Bellow, code to send barcode to the printer
   escpos.write(barcode, "hello barcode");
 ```
 
-### codetable
+### codetable.jar
 Shows how to send texts from different languages.
 ```
   escpos.setCharacterCodeTable(CharacterCodeTable.CP863_Canadian_French);
