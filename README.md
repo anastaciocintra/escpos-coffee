@@ -137,7 +137,11 @@ Shows how to send texts from different languages.
 ```
 
 ## Versioning
+
 Using [SemVer](https://semver.org) for versioning.
+
+Last release [here](https://github.com/anastaciocintra/escpos-coffee/releases/latest).
+
 
 ## Contributting 
 Contributors are wellcome, 
