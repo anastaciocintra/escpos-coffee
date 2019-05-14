@@ -12,7 +12,7 @@ import java.util.logging.Logger;
 import javax.print.PrintService;
 import output.PrinterOutputStream;
 
-public class BarcodeSample {
+public class pulsePinSample {
 
     public void Sample(String printerName){
 
@@ -23,13 +23,13 @@ public class BarcodeSample {
         try {
             escpos = new EscPos(new PrinterOutputStream(printService));
             
-            escpos.pulsePin(EscPos.PinConnector.Pin_2, 100, 300);
+            escpos.pulsePin(EscPos.PinConnector.Pin_2, 50, 75);
             
             
             escpos.close();
             
         } catch (IOException ex) {
-            Logger.getLogger(BarcodeSample.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(pulsePinSample.class.getName()).log(Level.SEVERE, null, ex);
         }
         
     }
@@ -45,7 +45,7 @@ public class BarcodeSample {
                 
                 System.exit(0);
             }
-            BarcodeSample obj = new BarcodeSample();
+            pulsePinSample obj = new pulsePinSample();
             obj.Sample(args[0]);
 
     }
