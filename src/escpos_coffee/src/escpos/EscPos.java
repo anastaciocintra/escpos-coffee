@@ -495,6 +495,7 @@ public class EscPos implements Closeable, Flushable , EscPosConst{
         }
 
         write(ESC);
+        write('p');
         write(pinConnector.value);
         write(t1);
         write(t2);
