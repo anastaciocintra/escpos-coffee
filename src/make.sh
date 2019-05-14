@@ -16,6 +16,8 @@ cd ../getstart;ant clean;ant jar;cp dist/*.jar ~/tmp/escposcoffee/samples
 cd ../graphicsImage;ant clean;ant jar;cp dist/*.jar ~/tmp/escposcoffee/samples
 cd ../rasterimage;ant clean;ant jar;cp dist/*.jar ~/tmp/escposcoffee/samples
 cd ../textstyle;ant clean;ant jar;cp dist/*.jar ~/tmp/escposcoffee/samples
+cd ../pulsePin;ant clean;ant jar;cp dist/*.jar ~/tmp/escposcoffee/samples
+
 cd ~/tmp
 tar cvzf escposcoffee.tgz escposcoffee/
 zip -r escposcoffee.zip escposcoffee/
