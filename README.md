@@ -47,18 +47,15 @@ java version "1.8.0_172"
 
 The project can be compiled with below commands:
 ```
-cd src/escpos_coffee
-ant clean
-ant  jar
-ant javadoc
+./mvnw clean package
 ```
 
 ## Samples
-You can find samples code on src/samples directory.
+You can find samples code on src/samples/ directory.
 Download the binaries [here](https://github.com/anastaciocintra/escpos-coffee/releases/latest).
 how to run samples:
 ```
-java -jar samplename.jar "printer name"
+java -jar samples/[samplename]/target/[samplename].jar "printer name"
 ```
 
 ### getstart.jar
@@ -149,6 +146,3 @@ but before you do it its important to read and agree with [CODE_OF_CONDUCT.md](h
 
 ## Acknowledgments
 I would like to thanks [Michael Billington](https://github.com/mike42) and contributors for the great work on the [mike42/escpos-php](https://github.com/mike42/escpos-php) project that inspired me to start this project.
-
-
-
