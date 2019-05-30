@@ -51,7 +51,7 @@ Step 2. Add the dependency
 <dependencies>
     ...
     <dependency>
-        <groupId>com.github.derickfelix</groupId>
+        <groupId>com.github.anastaciocintra</groupId>
         <artifactId>escpos-coffee</artifactId>
         <version>LATEST</version>
     </dependency>
