@@ -1,21 +1,18 @@
-# Compiled class file
-*.class
-
-# Log file
-*.log
-
-# BlueJ files
-*.ctxt
-
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
-*.jar
-*.war
-*.nar
-*.ear
-*.zip
-*.tar.gz
-*.rar
-
+/samples/barcode/nbproject/private/
+/barcode-sample/target/
+/escpos/target/
+/bitimage-sample/target/
+/charcode-sample/target/
+/dithering-sample/target/
+/getstart-sample/target/
+/samples/barcode-sample/target/
+/samples/barcode/target/
+/samples/bitimage/target/
+/samples/charcode/target/
+/samples/dithering/target/
+/samples/getstart/target/
+/samples/graphics-image/target/
+/samples/pulsepin/target/
+/samples/raster-image/target/
+/samples/textstyle/target/
+/escpos-coffee/target/

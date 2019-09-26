@@ -3,7 +3,7 @@
 Java library for ESC/POS printer commands. Can send text, images and barcodes to the printer.
 All commands are send to one OutputStream, than you can redirect to printer, file or network.
 
-## Getting Start
+## Getting Started
 The EscPos works with OutputStream to send its commands. Here we have two examples that show different output streams.
 
 Creating printer output stream:
@@ -33,32 +33,45 @@ See on samples directory to view more codes.
 ### Downloading
 Download code and binaries from the [last release of escpos-coffee](https://github.com/anastaciocintra/escpos-coffee/releases/latest).
 
+### Installation with Maven (Needs approval of the project owner)
+To install with maven, you can use the [Jitpack](https://jitpack.io/) for that.
 
-
-
-### Compiling
-I used the following development tools. But it might work with other versions or even another tools.
-
-Apache Ant(TM) version 1.10.5
-
-Netbeans 8.2
-
-java version "1.8.0_172"
-
-The project can be compiled with below commands:
+Step 1. Add the JitPack repository to your build file
+```xml
+<repositories>
+    ...
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+</repositories>
 ```
-cd src/escpos_coffee
-ant clean
-ant  jar
-ant javadoc
+Step 2. Add the dependency
+```xml
+<dependencies>
+    ...
+    <dependency>
+        <groupId>com.github.anastaciocintra</groupId>
+        <artifactId>escpos-coffee</artifactId>
+        <version>LATEST</version>
+    </dependency>
+</dependencies>
 ```
+If you have issues with the process you can use the short commit hash or 'master-SNAPSHOT' as the version. Check the [Jitpack](https://jitpack.io/) page for more details. 
+
+### Installation without Maven
+The project can be compiled with the below command:
+```
+./mvnw clean package
+```
+Then the jar file will be generated inside the 'target/' folder, just add the jar file to your classpath.
 
 ## Samples
-You can find samples code on src/samples directory.
+You can find samples code on src/samples/ directory.
 Download the binaries [here](https://github.com/anastaciocintra/escpos-coffee/releases/latest).
-how to run samples:
+How to run samples (You'll need to compile with the above command):
 ```
-java -jar samplename.jar "printer name"
+java -jar samples/[samplename]/target/[samplename].jar "printer name"
 ```
 
 ### getstart.jar
@@ -140,15 +153,12 @@ Shows how to send texts from different languages.
 
 Using [SemVer](https://semver.org) for versioning.
 
-Last release [here](https://github.com/anastaciocintra/escpos-coffee/releases/latest).
+Lastest release [here](https://github.com/anastaciocintra/escpos-coffee/releases/latest).
 
 
 ## Contributting 
-Contributors are wellcome, 
+Contributors are welcome, 
 but before you do it its important to read and agree with [CODE_OF_CONDUCT.md](https://github.com/anastaciocintra/escpos-coffee/blob/master/CODE_OF_CONDUCT.md) and [CONTRIBUTING.md](https://github.com/anastaciocintra/escpos-coffee/blob/master/CONTRIBUTING.md).
 
 ## Acknowledgments
 I would like to thanks [Michael Billington](https://github.com/mike42) and contributors for the great work on the [mike42/escpos-php](https://github.com/mike42/escpos-php) project that inspired me to start this project.
-
-
-
