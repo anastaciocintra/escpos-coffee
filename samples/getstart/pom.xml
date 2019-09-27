@@ -4,9 +4,8 @@
 
     <parent>
         <groupId>com.github.anastaciocintra</groupId>
-        <artifactId>escpos-coffee-parent</artifactId>
+        <artifactId>samples</artifactId>
         <version>${revision}</version>
-        <relativePath>../../</relativePath>
     </parent>
 
     <artifactId>getstart</artifactId>
@@ -17,7 +16,6 @@
         <dependency>
             <groupId>com.github.anastaciocintra</groupId>
             <artifactId>escpos-coffee</artifactId>
-            <version>${project.version}</version>
         </dependency>
     </dependencies>
     
