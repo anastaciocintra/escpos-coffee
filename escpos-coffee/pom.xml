@@ -7,9 +7,9 @@
     <packaging>jar</packaging>
 
     <parent>
-	<groupId>com.github.anastaciocintra</groupId>
-	<artifactId>escpos-coffee-parent</artifactId>
-	<version>1.0.0</version>
+        <groupId>com.github.anastaciocintra</groupId>
+        <artifactId>escpos-coffee-parent</artifactId>
+        <version>1.0.0</version>
     </parent>
 
     <properties>

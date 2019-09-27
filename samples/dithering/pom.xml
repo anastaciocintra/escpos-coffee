@@ -5,6 +5,8 @@
         <groupId>com.github.anastaciocintra</groupId>
         <artifactId>escpos-coffee-parent</artifactId>
         <version>1.0.0</version>
+        <relativePath>../../</relativePath>
+
     </parent>
     <artifactId>dithering</artifactId>
     <packaging>jar</packaging>
