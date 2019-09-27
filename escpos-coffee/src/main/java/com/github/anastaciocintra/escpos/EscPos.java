@@ -26,7 +26,7 @@ public class EscPos implements Closeable, Flushable, EscPosConst {
     /**
      * values of character code table.
      *
-     * @see #setCharacterCodeTable(escpos.EscPos.CharacterCodeTable)
+     * @see #setCharacterCodeTable(CharacterCodeTable)
      */
     public enum CharacterCodeTable {
         CP437_USA_Standard_Europe(0, "cp437"), Katakana(1), CP850_Multilingual(2, "cp850"), CP860_Portuguese(3, "cp860"), CP863_Canadian_French(4, "cp863"), CP865_Nordic(5, "cp865"), CP851_Greek(11), CP853_Turkish(12), CP857_Turkish(13, "cp857"), CP737_Greek(14, "cp737"), ISO8859_7_Greek(15, "iso8859_7"), WPC1252(16), CP866_Cyrillic_2(17, "cp866"), CP852_Latin2(18, "cp852"), CP858_Euro(19, "cp858"), KU42_Thai(20), TIS11_Thai(21), TIS18_Thai(26), TCVN_3_1_Vietnamese(30), TCVN_3_2_Vietnamese(31), PC720_Arabic(32), WPC775_BalticRim(33), CP855_Cyrillic(34, "cp855"), CP861_Icelandic(35, "cp861"), CP862_Hebrew(36, "cp862"), CP864_Arabic(37, "cp864"), CP869_Greek(38, "cp869"), ISO8859_2_Latin2(39, "iso8859_2"), ISO8859_15_Latin9(40, "iso8859_15"), CP1098_Farsi(41, "cp1098"), CP1118_Lithuanian(42), CP1119_Lithuanian(43), CP1125_Ukrainian(44), WCP1250_Latin2(45, "cp1250"), WCP1251_Cyrillic(46, "cp1251"), WCP1253_Greek(47, "cp1253"), WCP1254_Turkish(48, "cp1254"), WCP1255_Hebrew(49, "cp1255"), WCP1256_Arabic(50, "cp1256"), WCP1257_BalticRim(51, "cp1257"), WCP1258_Vietnamese(52, "cp1258"), KZ_1048_Kazakhstan(53), User_defined_page(255);
@@ -47,7 +47,7 @@ public class EscPos implements Closeable, Flushable, EscPosConst {
     /**
      * Values for CutMode.
      *
-     * @see #cut(escpos.EscPos.CutMode)
+     * @see #cut(CutMode)
      */
     public enum CutMode {
         FULL(48),
@@ -62,7 +62,7 @@ public class EscPos implements Closeable, Flushable, EscPosConst {
     /**
      * Values for pin connector
      *
-     * @see #pulsePin(escpos.EscPos.PinConnector, int, int)
+     * @see #pulsePin(PinConnector, int, int)
      */
     public enum PinConnector {
         Pin_2(48),
@@ -170,7 +170,7 @@ public class EscPos implements Closeable, Flushable, EscPosConst {
      * <p>
      * @param style to be used on writes.
      * @return this object
-     * @see #write(escpos.Style, java.lang.String)
+     * @see #write(Style, String)
      */
     public EscPos setStyle(Style style) {
         this.style = style;
@@ -181,7 +181,7 @@ public class EscPos implements Closeable, Flushable, EscPosConst {
      * Get actual style of this object.
      *
      * @return actual value.
-     * @see #setStyle(escpos.Style)
+     * @see #setStyle(Style)
      */
     public Style getStyle() {
         return style;
@@ -290,7 +290,7 @@ public class EscPos implements Closeable, Flushable, EscPosConst {
      * supported
      * @exception IOException if an I/O error occurs. In particular, an
      * <code>IOException</code> is thrown if the output stream is closed.
-     * @see #write(escpos.Style, java.lang.String)
+     * @see #write(Style, String)
      */
     public EscPos write(String text) throws UnsupportedEncodingException, IOException {
         return write(style, text);
@@ -306,7 +306,7 @@ public class EscPos implements Closeable, Flushable, EscPosConst {
      * supported
      * @exception IOException if an I/O error occurs. In particular, an
      * <code>IOException</code> is thrown if the output stream is closed.
-     * @see #write(escpos.Style, java.lang.String)
+     * @see #write(Style, String)
      * @see #feed(int)
      */
     public EscPos writeLF(Style style, String text) throws UnsupportedEncodingException, IOException {
@@ -318,7 +318,7 @@ public class EscPos implements Closeable, Flushable, EscPosConst {
     /**
      * Calls write and feed on end. The style to be used is de default. You can
      * configure this default style using {@link #getStyle() getStyle} and/or
-     * {@link #setStyle(escpos.Style)  setStyle}
+     * {@link #setStyle(Style)}   setStyle}
      *
      * @param text content to be send.
      * @return this object.
@@ -326,8 +326,8 @@ public class EscPos implements Closeable, Flushable, EscPosConst {
      * supported
      * @exception IOException if an I/O error occurs. In particular, an
      * <code>IOException</code> is thrown if the output stream is closed.
-     * @see #writeLF(escpos.Style, java.lang.String)
-     * @see #setStyle(escpos.Style)
+     * @see #writeLF(Style, String)
+     * @see #setStyle(Style)
      * @see #getStyle()
      */
     public EscPos writeLF(String text) throws UnsupportedEncodingException, IOException {
@@ -341,7 +341,7 @@ public class EscPos implements Closeable, Flushable, EscPosConst {
      * @param data content of bar-code.
      * @return this object
      * @exception IOException if an I/O error occurs.
-     * @see escpos.barcode.BarCodeWrapperInterface
+     * @see BarCodeWrapperInterface
      */
     public EscPos write(BarCodeWrapperInterface barcode, String data) throws IOException {
         byte[] bytes = barcode.getBytes(data);
@@ -357,7 +357,7 @@ public class EscPos implements Closeable, Flushable, EscPosConst {
      * @param image content to be print.
      * @return this object
      * @exception IOException if an I/O error occurs.
-     * @see escpos.image.ImageWrapperInterface
+     * @see ImageWrapperInterface
      */
     public EscPos write(ImageWrapperInterface wrapper, EscPosImage image) throws IOException {
         byte[] bytes = wrapper.getBytes(image);
@@ -413,7 +413,7 @@ public class EscPos implements Closeable, Flushable, EscPosConst {
      * @return this object.
      * @exception IOException if an I/O error occurs.
      * @exception IllegalArgumentException if nLines out of range 0 to 255
-     * @see #feed(escpos.Style, int)
+     * @see #feed(Style, int)
      */
     public EscPos feed(int nLines) throws IOException, IllegalArgumentException {
         return feed(style, nLines);
@@ -425,7 +425,7 @@ public class EscPos implements Closeable, Flushable, EscPosConst {
      * reset style of this object. ASCII ESC @
      * <p>
      * @return this object
-     * @see #setStyle(escpos.Style)
+     * @see #setStyle(Style)
      *
      * @exception IOException if an I/O error occurs.
      */
