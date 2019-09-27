@@ -9,7 +9,6 @@ public interface EscPosConst {
     /**
      *
      */
-    public final String version = "1.0.5";
     public final int NUL = 0;
     public final int LF = 10;
     public final int ESC = 27;
@@ -18,7 +17,7 @@ public interface EscPosConst {
     /**
      * Values for print justification.
      *
-     * @see Style#setJustification(escpos.EscPosConst.Justification)
+     * @see Style#setJustification(Justification)
      */
     public enum Justification {
         Left_Default(48),

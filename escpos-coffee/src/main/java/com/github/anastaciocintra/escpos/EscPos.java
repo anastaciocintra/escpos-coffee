@@ -10,6 +10,9 @@ import java.io.Flushable;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
+import java.util.Objects;
+import java.util.Properties;
+
 import com.github.anastaciocintra.escpos.barcode.BarCodeWrapperInterface;
 import com.github.anastaciocintra.escpos.image.ImageWrapperInterface;
 
@@ -471,6 +474,9 @@ public class EscPos implements Closeable, Flushable, EscPosConst {
     }
 
     public EscPos info() throws UnsupportedEncodingException, IOException {
+        final Properties properties = new Properties();
+        properties.load(Objects.requireNonNull(getClass().getClassLoader().getResourceAsStream("projectinfo.properties")));
+        String Version = properties.getProperty("version");
         Style title = new Style()
                 .setFontSize(Style.FontSize._3, Style.FontSize._3)
                 .setColorMode(Style.ColorMode.WhiteOnBlack)
@@ -478,7 +484,10 @@ public class EscPos implements Closeable, Flushable, EscPosConst {
         write(title, "EscPos Coffee");
         feed(5);
         writeLF("java driver for ESC/POS commands.");
-        writeLF("Version: " + version);
+
+
+        writeLF("Version: " + Version);
+
         feed(3);
         getStyle().setJustification(Justification.Right);
         writeLF("github.com");
