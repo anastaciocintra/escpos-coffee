@@ -33,29 +33,31 @@ See on samples directory to view more codes.
 ### Downloading
 Download code and binaries from the [last release of escpos-coffee](https://github.com/anastaciocintra/escpos-coffee/releases/latest).
 
-### Installation with Maven (Needs approval of the project owner)
-To install with maven, you can use the [Jitpack](https://jitpack.io/) for that.
+### Installation with Maven 
 
-Step 1. Add the JitPack repository to your build file
+
+Step 1. Add the repository to your build file
 ```xml
 <repositories>
-    ...
-    <repository>
-        <id>jitpack.io</id>
-        <url>https://jitpack.io</url>
-    </repository>
+  <repository>
+    <id>anastaciocintra-release</id>
+    <url>https://packagecloud.io/anastaciocintra/release/maven2</url>
+    <releases>
+      <enabled>true</enabled>
+    </releases>
+    <snapshots>
+      <enabled>true</enabled>
+    </snapshots>
+  </repository>
 </repositories>
 ```
 Step 2. Add the dependency
 ```xml
-<dependencies>
-    ...
-    <dependency>
-        <groupId>com.github.anastaciocintra</groupId>
-        <artifactId>escpos-coffee</artifactId>
-        <version>LATEST</version>
-    </dependency>
-</dependencies>
+<dependency>
+  <groupId>com.github.anastaciocintra</groupId>
+  <artifactId>escpos-coffee</artifactId>
+  <version>2.0.0</version>
+</dependency>
 ```
 If you have issues with the process you can use the short commit hash or 'master-SNAPSHOT' as the version. Check the [Jitpack](https://jitpack.io/) page for more details. 
 
@@ -68,19 +70,18 @@ Then the jar file will be generated inside the 'target/' folder, just add the ja
 
 ## Samples
 You can find samples code on src/samples/ directory.
-Download the binaries [here](https://github.com/anastaciocintra/escpos-coffee/releases/latest).
 How to run samples (You'll need to compile with the above command):
 ```
 java -jar samples/[samplename]/target/[samplename].jar "printer name"
 ```
 
-### getstart.jar
+### getstart sample
 Send info of the library to the printer.
 
 ![output](sample_images/info.png?raw=true "output")
 
 
-### textstyle.jar
+### textstyle sample
 
 Shows how to construnct one simple receipt.
 
@@ -97,7 +98,7 @@ Also this sample show how simple is to create diferent text styles, like title, 
 
 
 
-### graphicsimage.jar, bitimage.jar and rasterimage.jar
+### graphicsimage, bitimage and rasterimage samples
 
 Shows how to work with ImageWrapper.
 
@@ -108,7 +109,7 @@ Then you will see things like how to print on center-justified one image, like t
     escpos.write(imageWrapper, escposImage);
 ```
 
-### dithering.jar
+### dithering sample
 
 Shows how to work with BitonalThreshold and BitonalOrderedDither. 
 
@@ -124,9 +125,9 @@ Bellow, we can see how to use ordered dither class.
   escpos.write(imageWrapper, escposImage);
 
 ```
-### barcode.jar
+### barcode sample
 
-Samples of barcode, PDF417 and qrcode.
+Shows barcode, PDF417 and qrcode.
 
 ![output](sample_images/barcode.png?raw=true "output")
 
@@ -142,7 +143,7 @@ Bellow, code to send barcode to the printer
   escpos.write(barcode, "hello barcode");
 ```
 
-### codetable.jar
+### codetable  sample
 Shows how to send texts from different languages.
 ```
   escpos.setCharacterCodeTable(CharacterCodeTable.CP863_Canadian_French);
