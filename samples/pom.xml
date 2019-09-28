@@ -36,8 +36,8 @@
 
     <repositories>
         <repository>
-            <id>anastaciocintra-snapshot</id>
-            <url>https://packagecloud.io/anastaciocintra/snapshot/maven2</url>
+            <id>anastaciocintra-public</id>
+            <url>https://packagecloud.io/anastaciocintra/public/maven2</url>
             <releases>
                 <enabled>true</enabled>
             </releases>

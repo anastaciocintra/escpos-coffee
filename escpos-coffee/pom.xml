@@ -96,12 +96,12 @@
 
     <distributionManagement>
         <repository>
-            <id>packagecloud.release</id>
-            <url>packagecloud+https://packagecloud.io/anastaciocintra/release</url>
+            <id>packagecloud.public</id>
+            <url>packagecloud+https://packagecloud.io/anastaciocintra/public</url>
         </repository>
         <snapshotRepository>
-            <id>packagecloud.snapshot</id>
-            <url>packagecloud+https://packagecloud.io/anastaciocintra/snapshot</url>
+            <id>packagecloud.public</id>
+            <url>packagecloud+https://packagecloud.io/anastaciocintra/public</url>
         </snapshotRepository>
     </distributionManagement>
 

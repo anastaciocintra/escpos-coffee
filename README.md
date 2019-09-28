@@ -35,13 +35,12 @@ Download code and binaries from the [last release of escpos-coffee](https://gith
 
 ### Installation with Maven 
 
-
 Step 1. Add the repository to your build file
 ```xml
 <repositories>
   <repository>
-    <id>anastaciocintra-release</id>
-    <url>https://packagecloud.io/anastaciocintra/release/maven2</url>
+    <id>anastaciocintra-public</id>
+    <url>https://packagecloud.io/anastaciocintra/public/maven2</url>
     <releases>
       <enabled>true</enabled>
     </releases>
@@ -59,9 +58,23 @@ Step 2. Add the dependency
   <version>2.0.0</version>
 </dependency>
 ```
-If you have issues with the process you can use the short commit hash or 'master-SNAPSHOT' as the version. Check the [Jitpack](https://jitpack.io/) page for more details. 
 
-### Installation without Maven
+### Installation with Gradle 
+
+Step 1. Add the repository to your build file
+```
+repositories {
+    maven {
+        url "https://packagecloud.io/anastaciocintra/public/maven2"
+    }
+}
+```
+Step 2. Add the dependency
+```
+compile 'com.github.anastaciocintra:escpos-coffee:2.0.0'
+```
+
+### Installation without Maven or Gradle
 The project can be compiled with the below command:
 ```
 ./mvnw clean package
