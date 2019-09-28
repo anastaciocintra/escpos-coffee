@@ -8,7 +8,7 @@
     <packaging>pom</packaging>
 
     <properties>
-        <revision>2.0.0</revision>
+        <revision>2.1.0-SNAPSHOT</revision>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
@@ -19,8 +19,10 @@
         <enforcer.version>3.0.0-M2</enforcer.version>
         <maven-source.version>3.1.0</maven-source.version>
         <maven-assembly.version>3.1.1</maven-assembly.version>
-        <maven-install.version>3.0.0-M1</maven-install.version>
         <maven-jar.version>3.1.2</maven-jar.version>
+        <maven-install.version>3.0.0-M1</maven-install.version>
+        <maven-site.version>3.8.2</maven-site.version>
+        <maven-deploy.version>2.8.2</maven-deploy.version>
 
 
         <maven-packagecloud.version>0.0.6</maven-packagecloud.version>
@@ -104,6 +106,26 @@
                     <skip>true</skip>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>${maven-site.version}</version>
+
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>${maven-deploy.version}</version>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+
 
 
         </plugins>
