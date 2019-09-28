@@ -15,7 +15,7 @@ public class Style implements EscPosConst {
     /**
      * Values of font name.
      *
-     * @see #setFontName(escpos.Style.FontName)
+     * @see #setFontName(FontName)
      */
     public enum FontName {
         Font_A_Default(48),
@@ -31,7 +31,7 @@ public class Style implements EscPosConst {
     /**
      * Values of font size.
      *
-     * @see #setFontSize(escpos.Style.FontSize, escpos.Style.FontSize)
+     * @see #setFontSize(FontSize, FontSize)
      */
     public enum FontSize {
         _1(0),
@@ -52,7 +52,7 @@ public class Style implements EscPosConst {
     /**
      * values of underline style.
      *
-     * @see #setUnderline(escpos.Style.Underline)
+     * @see #setUnderline(Underline)
      */
     public enum Underline {
         None_Default(48),
@@ -68,7 +68,7 @@ public class Style implements EscPosConst {
     /**
      * values of color mode background / foreground reverse.
      *
-     * @see #setColorMode(escpos.Style.ColorMode)
+     * @see #setColorMode(ColorMode)
      */
     public enum ColorMode {
         BlackOnWhite_Default(0),
@@ -193,8 +193,7 @@ public class Style implements EscPosConst {
      *
      * @param lineSpacing value used on ESC 3 n
      * @return this object
-     * @throws IllegalArgumentException when lineSpacing is not between 0 and
-     * 255.
+     * @throws IllegalArgumentException when lineSpacing is not between 0 and 255.
      * @see #getConfigBytes()
      */
     public final Style setLineSpacing(int lineSpacing) throws IllegalArgumentException {

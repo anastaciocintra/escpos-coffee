@@ -15,7 +15,7 @@ public class BarCode implements EscPosConst, BarCodeWrapperInterface{
     /**
      * Provides bar-code system. <p>
      * Each system have one <code>regex</code> to help on validate data. 
-     * @see #setSystem(escpos.barcode.BarCode.BarCodeSystem) 
+     * @see #setSystem(BarCodeSystem)
      * @see java.util.regex.Pattern
      */
     public enum BarCodeSystem{
@@ -97,7 +97,7 @@ public class BarCode implements EscPosConst, BarCodeWrapperInterface{
      * Provides Bar Code HRI Positions.<p>
      * Human Readable Interpretation (HRI) position is the position of the text relative 
      * to the position of the bar-code.
-     * @see #setHRIPosition(escpos.barcode.BarCode.BarCodeHRIPosition) 
+     * @see #setHRIPosition(BarCodeHRIPosition)
      */
     public enum BarCodeHRIPosition{
         /**
@@ -127,7 +127,7 @@ public class BarCode implements EscPosConst, BarCodeWrapperInterface{
      * Provides textHRI font for bar-code.<p>
      * Human Readable Interpretation (HRI) font is the font of the text 
      * printed with bar-code. 
-     * @see #setHRIFont(escpos.barcode.BarCode.BarCodeHRIFont) 
+     * @see #setHRIFont(BarCodeHRIFont)
      */
     public enum BarCodeHRIFont{
         Font_A_Default(48),  

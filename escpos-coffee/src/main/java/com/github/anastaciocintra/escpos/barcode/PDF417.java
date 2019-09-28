@@ -17,7 +17,7 @@ public class PDF417 implements EscPosConst, BarCodeWrapperInterface{
      * Values of Error Correction Level.<p>
      * Used on function 069
      * 
-     * @see #setErrorLevel(escpos.barcode.PDF417.PDF417ErrorLevel) 
+     * @see #setErrorLevel(PDF417ErrorLevel)
      */
     public enum PDF417ErrorLevel{
         /**
@@ -65,7 +65,7 @@ public class PDF417 implements EscPosConst, BarCodeWrapperInterface{
     /**
      * Values of PDF417 Option.<p>
      * Used on function 070
-     * @see #setOption(escpos.barcode.PDF417.PDF417Option) 
+     * @see #setOption(PDF417Option)
      */
     public enum PDF417Option{
         Standard_Default(0),  

@@ -16,7 +16,7 @@ public class BitImageWrapper implements ImageWrapperInterface, EscPosConst{
     /**
      * Values for Bit Image Mode.
      * 
-     * @see #setMode(escpos.image.BitImageWrapper.BitImageMode) 
+     * @see #setMode(BitImageMode)
      */
     public enum BitImageMode{
         _8DotSingleDensity(0,8),  
@@ -60,7 +60,7 @@ public class BitImageWrapper implements ImageWrapperInterface, EscPosConst{
      * Select bit-image mode. <p>
      * @param mode mode to be used on command ESC *
      * @return this object
-     * @see #getBytes(escpos.image.EscPosImage) 
+     * @see #getBytes(EscPosImage)
      */
     public BitImageWrapper setMode(BitImageMode mode) {
         this.mode = mode;

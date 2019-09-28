@@ -15,7 +15,7 @@ import java.io.ByteArrayOutputStream;
 public class RasterBitImageWrapper implements EscPosConst, ImageWrapperInterface{
     /**
      * Values for Raster Bit Image mode.
-     * @see #setRasterBitImageMode(escpos.image.RasterBitImageWrapper.RasterBitImageMode) 
+     * @see #setRasterBitImageMode(RasterBitImageMode)
      */
     public enum RasterBitImageMode{
         Normal_Default(0),  
@@ -30,7 +30,7 @@ public class RasterBitImageWrapper implements EscPosConst, ImageWrapperInterface
     }
     
     private Justification justification;
-    RasterBitImageMode rasterBitImageMode;
+    private RasterBitImageMode rasterBitImageMode;
 
 
     public RasterBitImageWrapper(){
@@ -53,7 +53,7 @@ public class RasterBitImageWrapper implements EscPosConst, ImageWrapperInterface
      * 
      * @param rasterBitImageMode mode to be used with GS v 0
      * @return this object
-     * @see #getBytes(escpos.image.EscPosImage) 
+     * @see #getBytes(EscPosImage)
      */
     public RasterBitImageWrapper setRasterBitImageMode(RasterBitImageMode rasterBitImageMode) {
         this.rasterBitImageMode = rasterBitImageMode;

@@ -17,7 +17,7 @@ public interface EscPosConst {
     /**
      * Values for print justification.
      *
-     * @see Style#setJustification(Justification)
+     * @see Style#setJustification(Justification) 
      */
     public enum Justification {
         Left_Default(48),

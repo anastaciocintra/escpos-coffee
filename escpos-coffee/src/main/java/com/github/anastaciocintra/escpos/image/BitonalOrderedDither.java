@@ -15,8 +15,8 @@ import java.util.Random;
  * or the class can mount this array to the automatic values.
  */
 public class BitonalOrderedDither extends Bitonal{
-    final String ErrorMatrixSize = "matrixWidth and matrixHeight must be > 0";
-    final String ErrorthreshoudVal = "values of threshould must be between 0 and 255";
+    private final String ErrorMatrixSize = "matrixWidth and matrixHeight must be > 0";
+    private final String ErrorthreshoudVal = "values of threshould must be between 0 and 255";
     private int[][] ditherMatrix;
     private final int matrixWidth;
     private final int matrixHeight;

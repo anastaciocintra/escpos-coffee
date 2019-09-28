@@ -16,7 +16,7 @@ public class GraphicsImageWrapper implements EscPosConst, ImageWrapperInterface{
     
     /**
      * Values for Raster Bit Image mode.
-     * @see #setGraphicsImageBxBy(escpos.image.GraphicsImageWrapper.GraphicsImageBxBy) 
+     * @see #setGraphicsImageBxBy(GraphicsImageBxBy)
      */
     public enum GraphicsImageBxBy{
         Normal_Default(1,1),  
@@ -54,7 +54,7 @@ public class GraphicsImageWrapper implements EscPosConst, ImageWrapperInterface{
      * set values of Bx and By referring to the image size. <p> 
      * @param graphicsImageBxBy values used on function 112
      * @return this object
-     * @see #getBytes(escpos.image.EscPosImage) 
+     * @see #getBytes(EscPosImage)
      */
     public GraphicsImageWrapper setGraphicsImageBxBy(GraphicsImageBxBy graphicsImageBxBy) {
         this.graphicsImageBxBy = graphicsImageBxBy;

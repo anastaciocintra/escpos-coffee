@@ -15,7 +15,7 @@ public class QRCode implements EscPosConst, BarCodeWrapperInterface{
     
     /**
      * Values for QRCode model.
-     * @see #setModel(escpos.barcode.QRCode.QRModel) 
+     * @see #setModel(QRModel)
      */
     public enum QRModel{
         _1_Default(48),  
