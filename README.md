@@ -7,7 +7,7 @@ All commands are send to one OutputStream, than you can redirect to printer, fil
 The EscPos works with OutputStream to send its commands. Here we have two examples that show different output streams.
 
 Creating printer output stream:
-```
+```java
   PrintService printService = PrinterOutputStream.getPrintServiceByName("printerName");
   PrinterOutputStream printerOutputStream = new PrinterOutputStream(printService);
   EscPos escpos = new EscPos(printerOutputStream);
@@ -19,7 +19,7 @@ Creating printer output stream:
 ```
 
 Sending hello world to system out:
-```
+```java
   EscPos escpos = new EscPos(System.out);
   escpos.writeLF("Hello Wold");
   escpos.feed(5);
@@ -62,7 +62,7 @@ Step 2. Add the dependency
 ### Installation with Gradle 
 
 Step 1. Add the repository to your build file
-```
+```groovy
 repositories {
     maven {
         url "https://packagecloud.io/anastaciocintra/public/maven2"
@@ -70,13 +70,13 @@ repositories {
 }
 ```
 Step 2. Add the dependency
-```
+```groovy
 compile 'com.github.anastaciocintra:escpos-coffee:2.0.0'
 ```
 
 ### Installation without Maven or Gradle
 The project can be compiled with the below command:
-```
+```shell script
 ./mvnw clean package
 ```
 Then the jar file will be generated inside the 'target/' folder, just add the jar file to your classpath.
@@ -84,7 +84,7 @@ Then the jar file will be generated inside the 'target/' folder, just add the ja
 ## Samples
 You can find samples code on src/samples/ directory.
 How to run samples (You'll need to compile with the above command):
-```
+```shell script
 java -jar samples/[samplename]/target/[samplename].jar "printer name"
 ```
 
@@ -103,7 +103,7 @@ Shows how to construnct one simple receipt.
 
 Also this sample show how simple is to create diferent text styles, like title, subtitle, bold, etc.
 
-```
+```java
   Style title = new Style()
           .setFontSize(Style.FontSize._3, Style.FontSize._3)
           .setJustification(EscPosConst.Justification.Center);
@@ -116,7 +116,7 @@ Also this sample show how simple is to create diferent text styles, like title, 
 Shows how to work with ImageWrapper.
 
 Then you will see things like how to print on center-justified one image, like this: 
-```
+```java
     escpos.writeLF("print on Center");
     imageWrapper.setJustification(EscPosConst.Justification.Center);
     escpos.write(imageWrapper, escposImage);
@@ -132,7 +132,7 @@ Shows how to work with BitonalThreshold and BitonalOrderedDither.
 
 
 Bellow, we can see how to use ordered dither class.
-```
+```java
   algorithm = new BitonalOrderedDither();
   escposImage = new EscPosImage(imageBufferedImage, algorithm);     
   escpos.write(imageWrapper, escposImage);
@@ -151,14 +151,15 @@ Shows barcode, PDF417 and qrcode.
 
 Bellow, code to send barcode to the printer
 
-```
+```java
   BarCode barcode = new BarCode();
   escpos.write(barcode, "hello barcode");
 ```
 
 ### codetable  sample
 Shows how to send texts from different languages.
-```
+
+```java
   escpos.setCharacterCodeTable(CharacterCodeTable.CP863_Canadian_French);
   escpos.writeLF("Liberté et Fraternité.");
 ```
