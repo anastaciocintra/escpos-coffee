@@ -314,7 +314,7 @@ public class EscPos implements Closeable, Flushable, EscPosConst {
      */
     public EscPos writeLF(Style style, String text) throws UnsupportedEncodingException, IOException {
         write(style, text);
-        feed(1);
+        write(10);
         return this;
     }
 
