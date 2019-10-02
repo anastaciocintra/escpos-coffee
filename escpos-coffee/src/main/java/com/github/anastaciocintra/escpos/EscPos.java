@@ -314,7 +314,7 @@ public class EscPos implements Closeable, Flushable, EscPosConst {
      */
     public EscPos writeLF(Style style, String text) throws UnsupportedEncodingException, IOException {
         write(style, text);
-        feed(1);
+        write(10);
         return this;
     }
 
@@ -399,11 +399,15 @@ public class EscPos implements Closeable, Flushable, EscPosConst {
         if (nLines < 1 || nLines > 255) {
             throw new IllegalArgumentException("nLines must be between 1 and 255");
         }
-        byte[] configBytes = style.getConfigBytes();
-        write(configBytes, 0, configBytes.length);
-        write(ESC);
-        write('d');
-        write(nLines);
+        if(nLines == 1){
+            write(LF);
+        }else {
+            byte[] configBytes = style.getConfigBytes();
+            write(configBytes, 0, configBytes.length);
+            write(ESC);
+            write('d');
+            write(nLines);
+        }
         return this;
 
     }
