@@ -7,6 +7,53 @@
 
     <packaging>pom</packaging>
 
+
+    <name>escpos-coffee</name>
+    <description>
+        Java library for ESC/POS printer commands. Can send text, images and barcodes to the printer.
+        All commands are send to one OutputStream, than you can redirect to printer, file or network.
+    </description>
+    <url>https://github.com/anastaciocintra/escpos-coffee</url>
+
+    <organization>
+        <name>github.com/anastaciocintra</name>
+        <url>https://github.com/anastaciocintra</url>
+    </organization>
+
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/anastaciocintra/escpos-coffee/issues</url>
+    </issueManagement>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>https://github.com/anastaciocintra/escpos-coffee/blob/master/LICENSE</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <url>https://github.com/anastaciocintra/escpos-coffee</url>
+        <connection>
+            scm:git:git://github.com/anastaciocintra/escpos-coffee.git
+        </connection>
+        <developerConnection>
+            scm:git:ssh://git@//github.com/anastaciocintra/escpos-coffee.git
+        </developerConnection>
+    </scm>
+
+    <developers>
+        <developer>
+            <name>Marco Antonio Anastacio Cintra</name>
+            <email>anastaciocintra@gmail.com</email>
+            <roles>
+                <role>architect</role>
+                <role>developer</role>
+            </roles>
+        </developer>
+    </developers>
+
     <properties>
         <revision>2.1.0-SNAPSHOT</revision>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -26,8 +73,6 @@
 
 
         <maven-packagecloud.version>0.0.6</maven-packagecloud.version>
-
-
 
     </properties>
 
