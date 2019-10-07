@@ -12,6 +12,9 @@
 
     <packaging>jar</packaging>
 
+
+
+
     <build>
         <plugins>
             <plugin>
@@ -80,6 +83,21 @@
                 </configuration>
             </plugin>
 
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>${maven-gpg.version}</version>
+
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
 
         </plugins>
 
@@ -102,15 +120,66 @@
 
 
 
+    <name>escpos-coffee</name>
+    <description>
+        Java library for ESC/POS printer commands. Can send text, images and barcodes to the printer.
+        All commands are send to one OutputStream, than you can redirect to printer, file or network.
+    </description>
+    <url>https://github.com/anastaciocintra/escpos-coffee</url>
+
+    <organization>
+        <name>github.com/anastaciocintra</name>
+        <url>https://github.com/anastaciocintra</url>
+    </organization>
+
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/anastaciocintra/escpos-coffee/issues</url>
+    </issueManagement>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>https://github.com/anastaciocintra/escpos-coffee/blob/master/LICENSE</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <url>https://github.com/anastaciocintra/escpos-coffee</url>
+        <connection>
+            scm:git:git://github.com/anastaciocintra/escpos-coffee.git
+        </connection>
+        <developerConnection>
+            scm:git:ssh://git@//github.com/anastaciocintra/escpos-coffee.git
+        </developerConnection>
+    </scm>
+
+    <developers>
+        <developer>
+            <name>Marco Antonio Anastacio Cintra</name>
+            <email>anastaciocintra@gmail.com</email>
+            <roles>
+                <role>architect</role>
+                <role>developer</role>
+            </roles>
+        </developer>
+    </developers>
+
+
+
     <distributionManagement>
+
+
         <repository>
-            <id>packagecloud.public</id>
-            <url>packagecloud+https://packagecloud.io/anastaciocintra/public</url>
+            <id>ossrh-staging</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
         </repository>
         <snapshotRepository>
-            <id>packagecloud.public</id>
-            <url>packagecloud+https://packagecloud.io/anastaciocintra/public</url>
+            <id>ossrh-snapshots</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </snapshotRepository>
+
     </distributionManagement>
 
 </project>
