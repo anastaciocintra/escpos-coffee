@@ -36,17 +36,16 @@
 
     <repositories>
         <repository>
-            <id>anastaciocintra-public</id>
-            <url>https://packagecloud.io/anastaciocintra/public/maven2</url>
+            <id>oss.sonatype.org-snapshot</id>
+            <url>http://oss.sonatype.org/content/repositories/snapshots</url>
             <releases>
-                <enabled>true</enabled>
+                <enabled>false</enabled>
             </releases>
             <snapshots>
                 <enabled>true</enabled>
             </snapshots>
         </repository>
     </repositories>
-
 
 
 </project>
