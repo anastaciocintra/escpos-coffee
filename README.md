@@ -35,27 +35,11 @@ Download code and binaries from the [last release of escpos-coffee](https://gith
 
 ### Installation with Maven 
 
-Step 1. Add the repository to your build file
-```xml
-<repositories>
-  <repository>
-    <id>anastaciocintra-public</id>
-    <url>https://packagecloud.io/anastaciocintra/public/maven2</url>
-    <releases>
-      <enabled>true</enabled>
-    </releases>
-    <snapshots>
-      <enabled>true</enabled>
-    </snapshots>
-  </repository>
-</repositories>
-```
-Step 2. Add the dependency
 ```xml
 <dependency>
   <groupId>com.github.anastaciocintra</groupId>
   <artifactId>escpos-coffee</artifactId>
-  <version>2.0.0</version>
+  <version>3.0.0</version>
 </dependency>
 ```
 
@@ -63,15 +47,7 @@ Step 2. Add the dependency
 
 Step 1. Add the repository to your build file
 ```groovy
-repositories {
-    maven {
-        url "https://packagecloud.io/anastaciocintra/public/maven2"
-    }
-}
-```
-Step 2. Add the dependency
-```groovy
-compile 'com.github.anastaciocintra:escpos-coffee:2.0.0'
+implementation 'com.github.anastaciocintra:escpos-coffee:3.0.0'
 ```
 
 ### Installation without Maven or Gradle
