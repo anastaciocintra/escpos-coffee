@@ -23,3 +23,6 @@
         </profile>
     </profiles>
 </settings>
+
+<!--        #    gpg &#45;&#45;export-ownertrust | base64 -w 0 >>> GPG_OWNERTRUST-->
+<!--        #    ppg -a &#45;&#45;export-secret-keys anastaciocintra@gmail.com |base64 -w 0 >>> GPG_SECRET_KEYS-->
