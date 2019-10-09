@@ -3,8 +3,11 @@ jdk: openjdk8
 cache:
   directories:
     - $HOME/.m2
-install: mvn install --settings .travis/settings.xml -DskipTests
+
 before_install:
   - if [ ! -z "$GPG_SECRET_KEYS" ]; then echo $GPG_SECRET_KEYS | base64 --decode | $GPG_EXECUTABLE --import; fi
   - if [ ! -z "$GPG_OWNERTRUST" ]; then echo $GPG_OWNERTRUST | base64 --decode | $GPG_EXECUTABLE --import-ownertrust; fi
 
+install: mvn install --settings .travis/settings.xml -DskipTests -B
+
+after_success: mvn deploy --settings .travis/settings.xml -DskipTests -B
