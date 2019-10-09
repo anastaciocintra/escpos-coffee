@@ -12,4 +12,4 @@ install: mvn install --settings .travis/settings.xml -DskipTests -Dmaven.javadoc
 
 #after_success: mvn deploy --settings .travis/settings.xml
 script:
-  mvn clean deploy --settings .maven.xml -DskipTests=true -B
+  mvn clean deploy --settings .travis/settings.xml -DskipTests=true -B
