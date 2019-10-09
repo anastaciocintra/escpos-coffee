@@ -28,7 +28,7 @@ class EscPosTest {
 
     }
     @Test
-    void pulsePinTest() throws Exception{
+    void pulsePinTestCase() throws Exception{
         ByteArrayOutputStream result = new ByteArrayOutputStream();
         EscPos escpos = new EscPos(result);
 
@@ -40,7 +40,7 @@ class EscPosTest {
         expected.write('p');
         expected.write(EscPos.PinConnector.Pin_2.value);
         expected.write(50);
-        expected.write(75);
+        expected.write(7);
 
         assertArrayEquals(expected.toByteArray(), result.toByteArray());
 
