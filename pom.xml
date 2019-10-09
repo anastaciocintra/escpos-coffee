@@ -10,7 +10,7 @@
 
 
     <properties>
-        <revision>3.0.1</revision>
+        <revision>3.0.1-SNAPSHOT</revision>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
@@ -74,11 +74,37 @@
         <developer>
             <name>Marco Antonio Anastacio Cintra</name>
             <email>anastaciocintra@gmail.com</email>
+            <url>https://github.com/anastaciocintra</url>
             <roles>
-                <role>architect</role>
+                <role>Lead Developer</role>
+            </roles>
+        </developer>
+
+
+        <developer>
+            <name>Derick Felix</name>
+            <url>https://github.com/derickfelix</url>
+            <roles>
                 <role>developer</role>
             </roles>
         </developer>
+
+        <developer>
+            <name>Muraveiko Oleg U.</name>
+            <url>https://github.com/Muraveiko</url>
+            <roles>
+                <role>developer</role>
+            </roles>
+        </developer>
+
+        <developer>
+            <name>papuscoder</name>
+            <url>https://github.com/papuscoder</url>
+            <roles>
+                <role>developer</role>
+            </roles>
+        </developer>
+
     </developers>
 
 
