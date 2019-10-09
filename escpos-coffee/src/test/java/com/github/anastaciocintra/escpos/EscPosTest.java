@@ -40,7 +40,7 @@ class EscPosTest {
         expected.write('p');
         expected.write(EscPos.PinConnector.Pin_2.value);
         expected.write(50);
-        expected.write(7);
+        expected.write(75);
 
         assertArrayEquals(expected.toByteArray(), result.toByteArray());
 
