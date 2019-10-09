@@ -9,7 +9,7 @@ All commands are send to one OutputStream, than you can redirect to printer, fil
 
 ![GitHub](https://img.shields.io/github/license/anastaciocintra/escpos-coffee)
 ![Maven Central](https://img.shields.io/maven-central/v/com.github.anastaciocintra/escpos-coffee)
-[![Build Status](https://travis-ci.org/anastaciocintra/escpos-coffee.svg?branch=travis)](https://travis-ci.org/anastaciocintra/escpos-coffee)
+[![Build Status](https://travis-ci.org/anastaciocintra/escpos-coffee.svg?branch=master)](https://travis-ci.org/anastaciocintra/escpos-coffee)
 ![Sonatype Nexus (Snapshots)](https://img.shields.io/nexus/s/com.github.anastaciocintra/escpos-coffee?server=https%3A%2F%2Foss.sonatype.org)
 
 ## Getting Started
