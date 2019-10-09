@@ -1,0 +1,18 @@
+language: java
+jdk: openjdk8
+cache:
+  directories:
+    - $HOME/.m2
+
+before_install:
+  - if [ ! -z "$GPG_SECRET_KEYS" ]; then echo $GPG_SECRET_KEYS | base64 --decode | $GPG_EXECUTABLE --import; fi
+  - if [ ! -z "$GPG_OWNERTRUST" ]; then echo $GPG_OWNERTRUST | base64 --decode | $GPG_EXECUTABLE --import-ownertrust; fi
+
+install: mvn install --settings .travis/settings.xml -DskipTests -Dmaven.javadoc.skip=true -B
+
+script:
+  mvn clean deploy --settings .travis/settings.xml -DskipTests=true -B
+
+notifications:
+  email:
+    - anastaciocintra@gmail.com
