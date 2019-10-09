@@ -10,6 +10,9 @@ before_install:
 
 install: mvn install --settings .travis/settings.xml -DskipTests -Dmaven.javadoc.skip=true -B
 
-#after_success: mvn deploy --settings .travis/settings.xml
 script:
   mvn clean deploy --settings .travis/settings.xml -DskipTests=true -B
+
+notifications:
+  email:
+    - anastaciocintra@gmail.com
