@@ -8,6 +8,8 @@ before_install:
   - if [ ! -z "$GPG_SECRET_KEYS" ]; then echo $GPG_SECRET_KEYS | base64 --decode | $GPG_EXECUTABLE --import; fi
   - if [ ! -z "$GPG_OWNERTRUST" ]; then echo $GPG_OWNERTRUST | base64 --decode | $GPG_EXECUTABLE --import-ownertrust; fi
 
-install: mvn install --settings .travis/settings.xml -DskipTests -B
+install: mvn install --settings .travis/settings.xml -DskipTests -Dmaven.javadoc.skip=true -B
 
-after_success: mvn deploy --settings .travis/settings.xml -DskipTests -B
+#after_success: mvn deploy --settings .travis/settings.xml
+script:
+  mvn clean deploy --settings .maven.xml -DskipTests=true -B
