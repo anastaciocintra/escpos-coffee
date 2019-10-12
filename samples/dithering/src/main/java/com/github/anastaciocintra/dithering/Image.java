@@ -7,11 +7,7 @@ package com.github.anastaciocintra.dithering;
 
 import com.github.anastaciocintra.escpos.EscPos;
 import com.github.anastaciocintra.escpos.Style;
-import com.github.anastaciocintra.escpos.image.Bitonal;
-import com.github.anastaciocintra.escpos.image.BitonalOrderedDither;
-import com.github.anastaciocintra.escpos.image.BitonalThreshold;
-import com.github.anastaciocintra.escpos.image.EscPosImage;
-import com.github.anastaciocintra.escpos.image.RasterBitImageWrapper;
+import com.github.anastaciocintra.escpos.image.*;
 import com.github.anastaciocintra.output.PrinterOutputStream;
 
 import java.awt.image.BufferedImage;
@@ -58,21 +54,21 @@ public class Image {
             escpos.writeLF("BitonalThreshold()");
             // using bitonal threshold for dithering
             Bitonal algorithm = new BitonalThreshold(); 
-            EscPosImage escposImage = new EscPosImage(imageBufferedImage, algorithm);     
+            EscPosImage escposImage = new EscPosImage(new CoffeeImageImpl(imageBufferedImage), algorithm);
             escpos.write(imageWrapper, escposImage);
             escpos.feed(5);
 
             escpos.writeLF("BitonalThreshold(60) (clearing)");
             // using bitonal threshold for dithering with threshold value 60 (clearing)
             algorithm = new BitonalThreshold(100); 
-            escposImage = new EscPosImage(imageBufferedImage, algorithm);     
+            escposImage = new EscPosImage(new CoffeeImageImpl(imageBufferedImage), algorithm);
             escpos.write(imageWrapper, escposImage);
             escpos.feed(5);
 
             escpos.writeLF("BitonalThreshold(150) (darkening)");
             // using bitonal threshold for dithering with threshold value 60 (darkening)
             algorithm = new BitonalThreshold(150); 
-            escposImage = new EscPosImage(imageBufferedImage, algorithm);     
+            escposImage = new EscPosImage(new CoffeeImageImpl(imageBufferedImage), algorithm);
             escpos.write(imageWrapper, escposImage);
             escpos.feed(5);
 
@@ -87,21 +83,21 @@ public class Image {
             escpos.writeLF("BitonalOrderedDither()");
             // using ordered dither for dithering algorithm with default values
             algorithm = new BitonalOrderedDither();
-            escposImage = new EscPosImage(imageBufferedImage, algorithm);     
+            escposImage = new EscPosImage(new CoffeeImageImpl(imageBufferedImage), algorithm);
             escpos.write(imageWrapper, escposImage);
             escpos.feed(5);
 
             escpos.writeLF("BitonalOrderedDither (clearing) values");
             // using ordered dither for dithering algorithm with (clearing) values
             algorithm = new BitonalOrderedDither(2,2,60,100);
-            escposImage = new EscPosImage(imageBufferedImage, algorithm);     
+            escposImage = new EscPosImage(new CoffeeImageImpl(imageBufferedImage), algorithm);
             escpos.write(imageWrapper, escposImage);
             escpos.feed(5);
 
             escpos.writeLF("BitonalOrderedDither (darkening) values");
             // using ordered dither for dithering algorithm with (clearing) values
             algorithm = new BitonalOrderedDither(2,2,120,170);
-            escposImage = new EscPosImage(imageBufferedImage, algorithm);     
+            escposImage = new EscPosImage(new CoffeeImageImpl(imageBufferedImage), algorithm);
             escpos.write(imageWrapper, escposImage);
             escpos.feed(5);
 
@@ -109,7 +105,7 @@ public class Image {
             escpos.writeLF("quadruple sized to better see effects..");
             // using ordered dither for dithering algorithm with (clearing) values
             algorithm = new BitonalOrderedDither(3,3,100,130);
-            escposImage = new EscPosImage(imageBufferedImage, algorithm);     
+            escposImage = new EscPosImage(new CoffeeImageImpl(imageBufferedImage), algorithm);
             imageWrapper.setRasterBitImageMode(RasterBitImageWrapper.RasterBitImageMode.Quadruple);
             escpos.write(imageWrapper, escposImage);
             escpos.feed(5);
@@ -126,7 +122,7 @@ public class Image {
             BitonalOrderedDither customAlgorithm = new BitonalOrderedDither(3,3);
             // set custom matrix to be used on dithering
             customAlgorithm.setDitherMatrix(ditherMatrix);
-            escposImage = new EscPosImage(imageBufferedImage, customAlgorithm);   
+            escposImage = new EscPosImage(new CoffeeImageImpl(imageBufferedImage), customAlgorithm);
             // make image bigger to see better the effects.
             escpos.write(imageWrapper, escposImage);
             escpos.feed(5);

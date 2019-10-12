@@ -4,7 +4,6 @@
  */
 package com.github.anastaciocintra.escpos.image;
 
-import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +12,7 @@ import java.util.List;
  * Supply raster patterns images 
  */
 public class EscPosImage {
-    private final BufferedImage image;
+    private final CoffeeImage image;
     
     private final Bitonal bitonalAlgorithm;
     
@@ -21,13 +20,14 @@ public class EscPosImage {
     private List< ByteArrayOutputStream > CashedEscPosRasterRows_8 = new ArrayList();
     private List< ByteArrayOutputStream > CachedEscPosRasterRows_24 = new ArrayList();
 
+
     /**
      * creates an EscPosImage
      * @param image normal RGB image
      * @param bitonalAlgorithm Algorithm that transform RGB to bitonal  
      * @see #getBitonalVal(int, int) 
      */
-    public EscPosImage(BufferedImage image, Bitonal bitonalAlgorithm){
+    public EscPosImage(CoffeeImage image, Bitonal bitonalAlgorithm){
         this.image = image;
         this.bitonalAlgorithm = bitonalAlgorithm;
     }
@@ -87,19 +87,19 @@ public class EscPosImage {
         List< ByteArrayOutputStream > lRasterRows = new ArrayList();
         
         
-        List<BufferedImage> lRGBImageRows = new ArrayList();
+        List<CoffeeImage> lRGBImageRows = new ArrayList();
         for(int y = 0; y < image.getHeight();y+=bitsPerColumn_8_or_24){
             int height = bitsPerColumn_8_or_24;
             if((y + height) > image.getHeight()){
                 height = image.getHeight() - y;
             }
-            BufferedImage row= image.getSubimage(0, y, image.getWidth(), height);
+            CoffeeImage row = (CoffeeImage) image.getSubimage(0, y, image.getWidth(), height);
             lRGBImageRows.add(row);
         }
 
         int heightOffset = 0;
 
-        for(BufferedImage RGBRow   : lRGBImageRows){
+        for(CoffeeImage RGBRow   : lRGBImageRows){
             ByteArrayOutputStream baColumBytes = new ByteArrayOutputStream();
             for(int x = 0; x < RGBRow.getWidth();x++){
                 int col = 0;

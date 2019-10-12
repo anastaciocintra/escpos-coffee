@@ -8,10 +8,7 @@ package com.github.anastaciocintra.raster.image;
 import com.github.anastaciocintra.escpos.EscPos;
 import com.github.anastaciocintra.escpos.EscPosConst;
 import com.github.anastaciocintra.escpos.Style;
-import com.github.anastaciocintra.escpos.image.Bitonal;
-import com.github.anastaciocintra.escpos.image.BitonalThreshold;
-import com.github.anastaciocintra.escpos.image.EscPosImage;
-import com.github.anastaciocintra.escpos.image.RasterBitImageWrapper;
+import com.github.anastaciocintra.escpos.image.*;
 import com.github.anastaciocintra.output.PrinterOutputStream;
 
 import java.awt.image.BufferedImage;
@@ -45,7 +42,7 @@ public class Image {
             // creating the EscPosImage, need buffered image and algorithm.
             URL githubURL = getURL("github.png"); 
             BufferedImage  githubBufferedImage = ImageIO.read(githubURL);
-            EscPosImage escposImage = new EscPosImage(githubBufferedImage, algorithm);     
+            EscPosImage escposImage = new EscPosImage(new CoffeeImageImpl(githubBufferedImage), algorithm);
             
             // this wrapper uses esc/pos sequence: "GS 'v' '0'"
             RasterBitImageWrapper imageWrapper = new RasterBitImageWrapper();

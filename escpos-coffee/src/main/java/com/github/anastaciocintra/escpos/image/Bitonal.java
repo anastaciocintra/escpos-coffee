@@ -4,7 +4,6 @@
  */
 package com.github.anastaciocintra.escpos.image;
 
-import java.awt.image.BufferedImage;
 
 /**
  * Abstract base for  algorithms that transform RGB to bitonal.<p>
@@ -27,7 +26,7 @@ public abstract class Bitonal {
      * @return  call zeroOrOne to make decision (0 or 1)
      * @see #zeroOrOne(int, int, int, int, int, int) 
      */
-    public int getBitonalVal(BufferedImage image,int x, int y){
+    public int getBitonalVal(CoffeeImage image,int x, int y){
         int RGBA = image.getRGB(x, y);
         int alpha = (RGBA >> 24) & 0xFF;
         int red = (RGBA >> 16) & 0xFF;
