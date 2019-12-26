@@ -152,8 +152,8 @@ public class EscPosImage {
      * @param x the X coordinate of the image 
      * @param y the Y coordinate of the image 
      * @return  0 or 1     
-     * @see #EscPosImage(BufferedImage, Bitonal)  
-     * @see Bitonal#getBitonalVal(java.awt.image.BufferedImage, int, int) 
+     * @see #EscPosImage(CoffeeImage, Bitonal) (BufferedImage, Bitonal)  
+     * @see Bitonal#getBitonalVal(CoffeeImage, int, int)  
      */
     private int getBitonalVal(int x, int y) {
         return bitonalAlgorithm.getBitonalVal(image, x, y);

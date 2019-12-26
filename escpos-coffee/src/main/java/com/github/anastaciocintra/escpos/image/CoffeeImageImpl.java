@@ -2,6 +2,11 @@ package com.github.anastaciocintra.escpos.image;
 
 import java.awt.image.BufferedImage;
 
+/**
+ * implements CoffeeImage using Java BufferedImage
+ * @see CoffeeImage
+ * @see BufferedImage
+ */
 public class CoffeeImageImpl implements CoffeeImage {
 
     private BufferedImage image;

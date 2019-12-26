@@ -32,7 +32,47 @@ public class EscPos implements Closeable, Flushable, EscPosConst {
      * @see #setCharacterCodeTable(CharacterCodeTable)
      */
     public enum CharacterCodeTable {
-        CP437_USA_Standard_Europe(0, "cp437"), Katakana(1), CP850_Multilingual(2, "cp850"), CP860_Portuguese(3, "cp860"), CP863_Canadian_French(4, "cp863"), CP865_Nordic(5, "cp865"), CP851_Greek(11), CP853_Turkish(12), CP857_Turkish(13, "cp857"), CP737_Greek(14, "cp737"), ISO8859_7_Greek(15, "iso8859_7"), WPC1252(16), CP866_Cyrillic_2(17, "cp866"), CP852_Latin2(18, "cp852"), CP858_Euro(19, "cp858"), KU42_Thai(20), TIS11_Thai(21), TIS18_Thai(26), TCVN_3_1_Vietnamese(30), TCVN_3_2_Vietnamese(31), PC720_Arabic(32), WPC775_BalticRim(33), CP855_Cyrillic(34, "cp855"), CP861_Icelandic(35, "cp861"), CP862_Hebrew(36, "cp862"), CP864_Arabic(37, "cp864"), CP869_Greek(38, "cp869"), ISO8859_2_Latin2(39, "iso8859_2"), ISO8859_15_Latin9(40, "iso8859_15"), CP1098_Farsi(41, "cp1098"), CP1118_Lithuanian(42), CP1119_Lithuanian(43), CP1125_Ukrainian(44), WCP1250_Latin2(45, "cp1250"), WCP1251_Cyrillic(46, "cp1251"), WCP1253_Greek(47, "cp1253"), WCP1254_Turkish(48, "cp1254"), WCP1255_Hebrew(49, "cp1255"), WCP1256_Arabic(50, "cp1256"), WCP1257_BalticRim(51, "cp1257"), WCP1258_Vietnamese(52, "cp1258"), KZ_1048_Kazakhstan(53), User_defined_page(255);
+        CP437_USA_Standard_Europe(0, "cp437"),
+        Katakana(1),
+        CP850_Multilingual(2, "cp850"),
+        CP860_Portuguese(3, "cp860"),
+        CP863_Canadian_French(4, "cp863"),
+        CP865_Nordic(5, "cp865"),
+        CP851_Greek(11),
+        CP853_Turkish(12),
+        CP857_Turkish(13, "cp857"),
+        CP737_Greek(14, "cp737"),
+        ISO8859_7_Greek(15, "iso8859_7"),
+        WPC1252(16), CP866_Cyrillic_2(17, "cp866"),
+        CP852_Latin2(18, "cp852"),
+        CP858_Euro(19, "cp858"),
+        KU42_Thai(20), TIS11_Thai(21),
+        TIS18_Thai(26),
+        TCVN_3_1_Vietnamese(30),
+        TCVN_3_2_Vietnamese(31),
+        PC720_Arabic(32),
+        WPC775_BalticRim(33),
+        CP855_Cyrillic(34, "cp855"),
+        CP861_Icelandic(35, "cp861"),
+        CP862_Hebrew(36, "cp862"),
+        CP864_Arabic(37, "cp864"),
+        CP869_Greek(38, "cp869"),
+        ISO8859_2_Latin2(39, "iso8859_2"),
+        ISO8859_15_Latin9(40, "iso8859_15"),
+        CP1098_Farsi(41, "cp1098"),
+        CP1118_Lithuanian(42),
+        CP1119_Lithuanian(43),
+        CP1125_Ukrainian(44),
+        WCP1250_Latin2(45, "cp1250"),
+        WCP1251_Cyrillic(46, "cp1251"),
+        WCP1253_Greek(47, "cp1253"),
+        WCP1254_Turkish(48, "cp1254"),
+        WCP1255_Hebrew(49, "cp1255"),
+        WCP1256_Arabic(50, "cp1256"),
+        WCP1257_BalticRim(51, "cp1257"),
+        WCP1258_Vietnamese(52, "cp1258"),
+        KZ_1048_Kazakhstan(53),
+        User_defined_page(255);
         public int value;
         public String charsetName;
 
