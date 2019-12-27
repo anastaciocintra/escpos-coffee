@@ -22,6 +22,7 @@
         <module>pulsepin</module>
         <module>raster-image</module>
         <module>textstyle</module>
+        <module>textprintmodestyle</module>
     </modules>
 
     <dependencyManagement>

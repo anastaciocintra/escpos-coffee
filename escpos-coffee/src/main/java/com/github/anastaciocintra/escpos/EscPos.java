@@ -325,6 +325,29 @@ public class EscPos implements Closeable, Flushable, EscPosConst {
     }
 
     /**
+     * Write String to outputStream.
+     * <p>
+     * Configure printModeStyle by with ESC/POS commands, encode String by charsetName
+     * and write to outputStream.
+     *
+     * @param printModeStyle - text style to be used.
+     * @param text - content to be encoded and write to outputStream.
+     * @return this object.
+     * @exception UnsupportedEncodingException If the named charset is not
+     * supported
+     * @exception IOException if an I/O error occurs. In particular, an
+     * <code>IOException</code> is thrown if the output stream is closed.
+     * @see #setCharsetName(java.lang.String)
+     * @see PrintModeStyle
+     */
+    public EscPos write(PrintModeStyle printModeStyle, String text) throws UnsupportedEncodingException, IOException {
+        byte[] configBytes = printModeStyle.getConfigBytes();
+        write(configBytes, 0, configBytes.length);
+        this.outputStream.write(text.getBytes(charsetName));
+        return this;
+    }
+
+    /**
      * Calls write with default style.
      *
      * @param text content to be send.
@@ -355,6 +378,24 @@ public class EscPos implements Closeable, Flushable, EscPosConst {
     public EscPos writeLF(Style style, String text) throws UnsupportedEncodingException, IOException {
         write(style, text);
         write(10);
+        return this;
+    }
+
+    /**
+     * Calls write and feed on end.
+     *
+     * @param printModeStyle value to be send.
+     * @param text content to be send.
+     * @return this object
+     * @exception UnsupportedEncodingException If the named charset is not
+     * supported
+     * @exception IOException if an I/O error occurs. In particular, an
+     * <code>IOException</code> is thrown if the output stream is closed.
+     * @see #write(PrintModeStyle, String)
+     */
+    public EscPos writeLF(PrintModeStyle printModeStyle, String text) throws UnsupportedEncodingException, IOException {
+        write(printModeStyle, text);
+        write(LF);
         return this;
     }
 

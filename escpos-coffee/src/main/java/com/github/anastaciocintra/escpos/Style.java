@@ -9,6 +9,8 @@ import java.io.IOException;
 
 /**
  * Supply ESC/POS text style commands
+ * Note: If your printer isn't compatible with this class, you can try to use PrintModeStyle class
+ * @see PrintModeStyle
  */
 public class Style implements EscPosConst {
 
@@ -278,7 +280,7 @@ public class Style implements EscPosConst {
         bytes.write(ESC);
         bytes.write('M');
         bytes.write(fontName.value);
-        // 
+        //
         bytes.write(ESC);
         bytes.write('E');
         int n = bold ? 1 : 0;

@@ -11,7 +11,7 @@ package com.github.anastaciocintra.escpos.image;
  * Any dither algorithm can be implemented, like ordered grid or noise dither.
  * Generally, you need to call image.getRGB(x, y) and decide if return zero or one.
  * you need to Override only the {@link #zeroOrOne(int, int, int, int, int, int) zeroOrOne} method
- * but if you want, you can Override {@link  #getBitonalVal(java.awt.image.BufferedImage, int, int) getBitonalVal} too.
+ * but if you want, you can Override {@link  #getBitonalVal(CoffeeImage, int, int)}  getBitonalVal} too.
  */
 public abstract class Bitonal {
     /**
