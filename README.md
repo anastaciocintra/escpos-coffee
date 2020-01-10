@@ -68,18 +68,13 @@ dependencies {
 }
 ```
 
-### Installation without Maven or Gradle
-The project can be compiled with the below command:
-```shell script
-./mvnw clean package
-```
-Then the jar file will be generated inside the 'target/' folder, just add the jar file to your classpath.
-
 ## Samples
-You can find samples code on src/samples/ directory.
-How to run samples (You'll need to compile with the above command):
+You can find samples code on samples directory.
+How to run samples:
 ```shell script
-java -jar samples/[samplename]/target/[samplename].jar "printer name"
+cd samples
+mvn clean package
+java -jar [samplename]/target/[samplename]-jar-with-dependencies.jar "printer name"
 ```
 
 ### getstart sample
@@ -128,7 +123,7 @@ Shows how to work with BitonalThreshold and BitonalOrderedDither.
 Bellow, we can see how to use ordered dither class.
 ```java
   algorithm = new BitonalOrderedDither();
-  escposImage = new EscPosImage(imageBufferedImage, algorithm);     
+  EscPosImage escposImage = new EscPosImage(new CoffeeImageImpl(imageBufferedImage), algorithm);     
   escpos.write(imageWrapper, escposImage);
 
 ```

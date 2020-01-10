@@ -9,8 +9,6 @@ import java.io.IOException;
 import java.io.PipedInputStream;
 import java.io.PipedOutputStream;
 import java.lang.Thread.UncaughtExceptionHandler;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.print.Doc;
 import javax.print.DocFlavor;
 import javax.print.DocPrintJob;
@@ -45,7 +43,7 @@ public class PrinterOutputStream extends PipedOutputStream {
     public PrinterOutputStream(PrintService printService) throws IOException {
 
         UncaughtExceptionHandler uncaughtException = (Thread t, Throwable e) -> {
-            Logger.getLogger(PrinterOutputStream.class.getName()).log(Level.SEVERE, null, e);
+            throw new RuntimeException(e);
         };
 
         pipedInputStream = new PipedInputStream();
