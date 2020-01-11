@@ -68,13 +68,22 @@ dependencies {
 }
 ```
 
-## Samples
-You can find samples code on samples directory.
-How to run samples:
+
+### Installation without Maven or Gradle
+The project can be compiled with the below command:
 ```shell script
-cd samples
-mvn clean package
-java -jar [samplename]/target/[samplename]-jar-with-dependencies.jar "printer name"
+./mvnw clean package
+```
+Then the jar file will be generated inside the 'target/' folder, just add the jar file to your classpath.
+
+
+## Samples
+You can find samples code on src/samples/ directory.
+How to run samples (You'll need to compile with the above command):
+```shell script
+java -jar samples/[samplename]/target/[samplename]-jar-with-dependencies.jar 
+# without argument to list the priter names
+java -jar samples/[samplename]/target/[samplename]-jar-with-dependencies.jar "printer name"
 ```
 
 ### getstart sample

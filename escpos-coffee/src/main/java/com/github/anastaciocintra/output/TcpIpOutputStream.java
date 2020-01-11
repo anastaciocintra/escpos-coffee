@@ -40,7 +40,7 @@ public class TcpIpOutputStream  extends PipedOutputStream {
         pipedInputStream = new PipedInputStream();
         super.connect(pipedInputStream);
         Thread.UncaughtExceptionHandler uncaughtException = (Thread t, Throwable e) -> {
-            throw new RuntimeException(e);
+            Logger.getLogger(this.getClass().getName()).log(Level.SEVERE, e.getMessage(),e);
         };
 
 
@@ -52,7 +52,7 @@ public class TcpIpOutputStream  extends PipedOutputStream {
 
                 // create a DataInputStream so we can read data from it.
                 // read the message from the socket
-                byte[] buf = new byte[4096];
+                byte[] buf = new byte[1024];
                 while(true) {
                     int n = pipedInputStream.read(buf);
                     if( n < 0 ) break;
