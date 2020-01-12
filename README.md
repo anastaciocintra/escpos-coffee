@@ -48,7 +48,7 @@ Download code and binaries from the [last release of escpos-coffee](https://gith
 <dependency>
   <groupId>com.github.anastaciocintra</groupId>
   <artifactId>escpos-coffee</artifactId>
-  <version>3.0.0</version>
+  <version>4.0.0</version>
 </dependency>
 ```
 
@@ -78,13 +78,7 @@ Then the jar file will be generated inside the 'target/' folder, just add the ja
 
 
 ## Samples
-You can find samples code on src/samples/ directory.
-How to run samples (You'll need to compile with the above command):
-```shell script
-java -jar samples/[samplename]/target/[samplename]-jar-with-dependencies.jar 
-# without argument to list the priter names
-java -jar samples/[samplename]/target/[samplename]-jar-with-dependencies.jar "printer name"
-```
+You can find samples code on https://github.com/anastaciocintra/escpos-coffee-samples 
 
 ### getstart sample
 Send info of the library to the printer.
