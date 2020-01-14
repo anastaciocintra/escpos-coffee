@@ -55,16 +55,16 @@ Download code and binaries from the [last release of escpos-coffee](https://gith
 ### Installation with Gradle 
 
 Step 1. Add the repository to your build file
-```groovy
+```
 repositories {
     mavenCentral()
 }
 ```
 
 Step 2. Add the dependency
-```groovy
+```
 dependencies {
-    implementation 'com.github.anastaciocintra:escpos-coffee:3.0.0'
+    implementation 'com.github.anastaciocintra:escpos-coffee:4.0.0'
 }
 ```
 

@@ -47,11 +47,10 @@ public class TcpIpOutputStream  extends PipedOutputStream {
         Runnable runnablePrint = () -> {
 
             try (Socket socket = new Socket(host,port)) {
-                // get the input stream from the connected socket
+
                 OutputStream outputStream = socket.getOutputStream();
 
-                // create a DataInputStream so we can read data from it.
-                // read the message from the socket
+
                 byte[] buf = new byte[1024];
                 while(true) {
                     int n = pipedInputStream.read(buf);
