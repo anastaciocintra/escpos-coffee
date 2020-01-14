@@ -48,25 +48,26 @@ Download code and binaries from the [last release of escpos-coffee](https://gith
 <dependency>
   <groupId>com.github.anastaciocintra</groupId>
   <artifactId>escpos-coffee</artifactId>
-  <version>3.0.0</version>
+  <version>4.0.0</version>
 </dependency>
 ```
 
 ### Installation with Gradle 
 
 Step 1. Add the repository to your build file
-```groovy
+```
 repositories {
     mavenCentral()
 }
 ```
 
 Step 2. Add the dependency
-```groovy
+```
 dependencies {
-    implementation 'com.github.anastaciocintra:escpos-coffee:3.0.0'
+    implementation 'com.github.anastaciocintra:escpos-coffee:4.0.0'
 }
 ```
+
 
 ### Installation without Maven or Gradle
 The project can be compiled with the below command:
@@ -75,12 +76,9 @@ The project can be compiled with the below command:
 ```
 Then the jar file will be generated inside the 'target/' folder, just add the jar file to your classpath.
 
+
 ## Samples
-You can find samples code on src/samples/ directory.
-How to run samples (You'll need to compile with the above command):
-```shell script
-java -jar samples/[samplename]/target/[samplename].jar "printer name"
-```
+You can find samples code on https://github.com/anastaciocintra/escpos-coffee-samples 
 
 ### getstart sample
 Send info of the library to the printer.
@@ -128,7 +126,7 @@ Shows how to work with BitonalThreshold and BitonalOrderedDither.
 Bellow, we can see how to use ordered dither class.
 ```java
   algorithm = new BitonalOrderedDither();
-  escposImage = new EscPosImage(imageBufferedImage, algorithm);     
+  EscPosImage escposImage = new EscPosImage(new CoffeeImageImpl(imageBufferedImage), algorithm);     
   escpos.write(imageWrapper, escposImage);
 
 ```
