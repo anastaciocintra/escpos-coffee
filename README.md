@@ -48,7 +48,7 @@ Download code and binaries from the [last release of escpos-coffee](https://gith
 <dependency>
   <groupId>com.github.anastaciocintra</groupId>
   <artifactId>escpos-coffee</artifactId>
-  <version>4.0.0</version>
+  <version>4.0.1</version>
 </dependency>
 ```
 
@@ -64,20 +64,24 @@ repositories {
 Step 2. Add the dependency
 ```
 dependencies {
-    implementation 'com.github.anastaciocintra:escpos-coffee:4.0.0'
+    implementation 'com.github.anastaciocintra:escpos-coffee:4.0.1'
 }
 ```
 
 
 ### Installation without Maven or Gradle
+
 The project can be compiled with the below command:
+
 ```shell script
 ./mvnw clean package
 ```
+
 Then the jar file will be generated inside the 'target/' folder, just add the jar file to your classpath.
 
 
 ## Samples
+
 You can find samples code on https://github.com/anastaciocintra/escpos-coffee-samples 
 
 ### getstart sample
@@ -95,6 +99,7 @@ Shows how to construnct one simple receipt.
 
 Also this sample show how simple is to create diferent text styles, like title, subtitle, bold, etc.
 
+
 ```java
   Style title = new Style()
           .setFontSize(Style.FontSize._3, Style.FontSize._3)
@@ -108,6 +113,7 @@ Also this sample show how simple is to create diferent text styles, like title, 
 Shows how to work with ImageWrapper.
 
 Then you will see things like how to print on center-justified one image, like this: 
+
 ```java
     escpos.writeLF("print on Center");
     imageWrapper.setJustification(EscPosConst.Justification.Center);
@@ -124,6 +130,7 @@ Shows how to work with BitonalThreshold and BitonalOrderedDither.
 
 
 Bellow, we can see how to use ordered dither class.
+
 ```java
   algorithm = new BitonalOrderedDither();
   EscPosImage escposImage = new EscPosImage(new CoffeeImageImpl(imageBufferedImage), algorithm);     
