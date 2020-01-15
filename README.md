@@ -73,8 +73,10 @@ dependencies {
 
 The project can be compiled with the below command:
 
-```shell script
+```
+
 ./mvnw clean package
+
 ```
 
 Then the jar file will be generated inside the 'target/' folder, just add the jar file to your classpath.
