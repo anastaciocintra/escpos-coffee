@@ -174,7 +174,16 @@ Lastest release [here](https://github.com/anastaciocintra/escpos-coffee/releases
 
 ## Contributting 
 Contributors are welcome, 
-but before you do it its important to read and agree with [CODE_OF_CONDUCT.md](https://github.com/anastaciocintra/escpos-coffee/blob/master/CODE_OF_CONDUCT.md) and [CONTRIBUTING.md](https://github.com/anastaciocintra/escpos-coffee/blob/master/CONTRIBUTING.md).
+but before you do it its important to read and agree with [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) and [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## Third Party
+All third party dependencies used by escpos-coffee library are compatible with MIT licence.
+Details of licenses on [3RD_PARTY_LICENCES.md](3RD_PARTY_LICENCES.md) 
+
+**List of dependencies:**
+
+https://github.com/Fazecast/jSerialComm (Apache 2.0 License)
+
 
 ## Acknowledgments
 I would like to thanks [Michael Billington](https://github.com/mike42) and contributors for the great work on the [mike42/escpos-php](https://github.com/mike42/escpos-php) project that inspired me to start this project.
