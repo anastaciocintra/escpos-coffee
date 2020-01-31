@@ -23,7 +23,7 @@
 
 
     <properties>
-        <revision>4.0.1</revision>
+        <revision>4.1.0-SNAPSHOT</revision>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
@@ -33,6 +33,7 @@
         <flatten.version>1.1.0</flatten.version>
         <enforcer.version>3.0.0-M2</enforcer.version>
         <maven-source.version>3.1.0</maven-source.version>
+        <maven-javadoc.version>3.1.1</maven-javadoc.version>
         <maven-assembly.version>3.1.1</maven-assembly.version>
         <maven-jar.version>3.1.2</maven-jar.version>
         <maven-install.version>3.0.0-M1</maven-install.version>
@@ -168,13 +169,22 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.1.1</version>
+                <version>${maven-javadoc.version}</version>
                 <executions>
                     <execution>
                         <id>attach-javadocs</id>
                         <goals>
                             <goal>jar</goal>
                         </goals>
+                    </execution>
+                    <execution>
+                        <id>svn</id>
+                        <goals>
+                            <goal>javadoc</goal>
+                        </goals>
+                        <configuration>
+                            <destDir>${project.basedir}/apidocs</destDir>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
