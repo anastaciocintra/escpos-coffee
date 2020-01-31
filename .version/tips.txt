@@ -1,0 +1,20 @@
+to release:
+under desenv branch..
+edit changeversion.sh
+run changeversion.sh
+(delete apidocs folder)?
+run mvn javadoc:javadoc
+commit / push
+whait travis ... some minutes
+go to oss.sonatype.org
+   on staging repositories, confirm that all the content is ok (with javadoc, sources)...
+      if not, wait some minutes...
+      if if necessary, run travis again
+   close.. wait
+   promote... wait
+   release ... wait some hours
+   test <putting on dependencies>
+on github
+   pull request of the released branch
+   create a new release
+
