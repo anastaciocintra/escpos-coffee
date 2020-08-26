@@ -3,6 +3,7 @@
 
 Java library for ESC/POS printer commands. Can send text, images and barcodes to the printer.
 All commands are send to one OutputStream, then you can redirect to printer, file or network.
+## [Wiki](https://github.com/anastaciocintra/escpos-coffee/wiki)
 
 
 
