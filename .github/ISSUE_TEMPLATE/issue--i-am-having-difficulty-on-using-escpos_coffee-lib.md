@@ -2,7 +2,7 @@
 name: 'Issue: I am having difficulty on using escpos_coffee lib'
 about: You have problems while using the lib
 title: ''
-labels: help wanted
+labels: help wanted, question
 assignees: ''
 
 ---
