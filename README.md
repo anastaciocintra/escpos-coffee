@@ -87,6 +87,16 @@ Then the jar file will be generated inside the 'target/' folder, just add the ja
 
 You can find samples code on https://github.com/anastaciocintra/escpos-coffee-samples 
 
+
+ [SliceImage](https://github.com/anastaciocintra/escpos-coffee-samples/tree/master/miscellaneous/sliceimage) - **NEW** - How to print big images (beta version to be incorporated on escpos-coffee library)
+ 
+ 
+ [CoffeeImage](https://github.com/anastaciocintra/escpos-coffee-samples/tree/master/miscellaneous/CoffeeBitmap) - **NEW** - How to construct html receipts 
+
+![output](sample_images/htmlcss.png?raw=true "output")
+
+
+
 ### getstart sample
 Send info of the library to the printer.
 
