@@ -87,7 +87,8 @@ Then the jar file will be generated inside the 'target/' folder, just add the ja
 
 You can find samples code on https://github.com/anastaciocintra/escpos-coffee-samples 
 
-
+ [BarcodeGen](https://github.com/anastaciocintra/escpos-coffee-samples/tree/master/miscellaneous/BarcodeGen) - **NEW** - How to generate barcode image and print it
+ 
  [PdfPrinting](https://github.com/anastaciocintra/escpos-coffee-samples/tree/master/miscellaneous/PdfPrinting) - **NEW** - How to print pdf files
  
  
