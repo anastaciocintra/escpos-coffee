@@ -1,0 +1,38 @@
+------ desenv / tests
+-create new branch SNAPSHOT from master ex 4.0.2-SNAPSHOT
+-change changeversion.sh:
+    old="4.0.1"
+    new="4.0.2-SNAPSHOT"
+
+delete files on .m2/repository/com/github/anastaciocintra/escpos-coffee
+mvn install
+mvn deploy
+
+
+test...
+promote to production:
+change changeversion.sh:
+old="4.0.2-SNAPSHOT"
+new="4.0.2"
+commit
+
+go to "production part"
+
+------ production
+(delete apidocs folder)?
+run mvn javadoc:javadoc
+commit / push
+whait travis ... some minutes
+go to oss.sonatype.org
+   on staging repositories, confirm that all the content is ok (with javadoc, sources)...
+      if not, wait some minutes...
+      if if necessary, run travis again
+   close.. wait
+   promote... wait
+   release ... wait some hours
+   test <putting on dependencies>
+on github
+   pull request of the released branch
+   create a new release
+
+------ escpos-samples production
