@@ -49,7 +49,7 @@ Download code and binaries from the [last release of escpos-coffee](https://gith
 <dependency>
   <groupId>com.github.anastaciocintra</groupId>
   <artifactId>escpos-coffee</artifactId>
-  <version>4.0.1</version>
+  <version>4.0.2</version>
 </dependency>
 ```
 
@@ -65,7 +65,7 @@ repositories {
 Step 2. Add the dependency
 ```
 dependencies {
-    implementation 'com.github.anastaciocintra:escpos-coffee:4.0.1'
+    implementation 'com.github.anastaciocintra:escpos-coffee:4.0.2'
 }
 ```
 
@@ -85,28 +85,17 @@ Then the jar file will be generated inside the 'target/' folder, just add the ja
 
 ## Samples
 
-You can find samples code on https://github.com/anastaciocintra/escpos-coffee-samples 
-
- [BarcodeGen](https://github.com/anastaciocintra/escpos-coffee-samples/tree/master/miscellaneous/BarcodeGen) - **NEW** - How to generate barcode image and print it
- 
- [PdfPrinting](https://github.com/anastaciocintra/escpos-coffee-samples/tree/master/miscellaneous/PdfPrinting) - **NEW** - How to print pdf files
- 
- 
- [CoffeeBitmap](https://github.com/anastaciocintra/escpos-coffee-samples/tree/master/miscellaneous/CoffeeBitmap) - **NEW** - How to construct html/css receipts 
-
-![output](sample_images/htmlcss.png?raw=true "output")
-
+You can find all samples codes on https://github.com/anastaciocintra/escpos-coffee-samples 
 
 
 ### getstart sample
-Send info of the library to the printer.
+[getstart](https://github.com/anastaciocintra/escpos-coffee-samples/tree/master/usual/getstart) - Send info of the library to the printer.
 
 ![output](sample_images/info.png?raw=true "output")
 
 
 ### textstyle sample
-
-Shows how to construnct one simple receipt.
+[textstyle](https://github.com/anastaciocintra/escpos-coffee-samples/tree/master/usual/textstyle) - Shows how to construnct one simple receipt.
 
 ![output](sample_images/style.png?raw=true "output")
 
@@ -135,7 +124,7 @@ Then you will see things like how to print on center-justified one image, like t
 ```
 
 ### dithering sample
-
+[dithering](https://github.com/anastaciocintra/escpos-coffee-samples/tree/master/usual/dithering) - 
 Shows how to work with BitonalThreshold and BitonalOrderedDither. 
 
 ![output](sample_images/threshould.png?raw=true "output")
@@ -152,7 +141,7 @@ Bellow, we can see how to use ordered dither class.
 
 ```
 ### barcode sample
-
+[barcode](https://github.com/anastaciocintra/escpos-coffee-samples/tree/master/usual/barcode) - 
 Shows barcode, PDF417 and qrcode.
 
 ![output](sample_images/barcode.png?raw=true "output")
@@ -170,12 +159,25 @@ Bellow, code to send barcode to the printer
 ```
 
 ### codetable  sample
+[charcode](https://github.com/anastaciocintra/escpos-coffee-samples/tree/master/usual/charcode) - 
 Shows how to send texts from different languages.
 
 ```java
   escpos.setCharacterCodeTable(CharacterCodeTable.CP863_Canadian_French);
   escpos.writeLF("Liberté et Fraternité.");
 ```
+
+### Others
+[Android](https://github.com/anastaciocintra/escpos-coffee-samples/tree/master/miscellaneous/AndroidImage) - How to use this lib on Android Studio project.
+
+[BarcodeGen](https://github.com/anastaciocintra/escpos-coffee-samples/tree/master/miscellaneous/BarcodeGen) - How to generate barcode image and print it
+
+[PdfPrinting](https://github.com/anastaciocintra/escpos-coffee-samples/tree/master/miscellaneous/PdfPrinting) - How to print pdf files
+
+[CoffeeBitmap](https://github.com/anastaciocintra/escpos-coffee-samples/tree/master/miscellaneous/CoffeeBitmap) - How to construct html/css receipts
+
+![output](sample_images/htmlcss.png?raw=true "output")
+
 
 ## Versioning
 
