@@ -70,8 +70,6 @@ public class BitonalOrderedDither extends Bitonal{
         float positionValue = (float)thresholdMin;
 
         Random randomCoordinates = new Random(1);
-//        int shuffledX[] = randomCoordinates.ints(0, matrixWidth).distinct().limit(matrixWidth).toArray();
-//        int shuffledY[] = randomCoordinates.ints(0, matrixHeight).distinct().limit(matrixHeight).toArray();
         int shuffledX[] = shuffle(matrixWidth, randomCoordinates);
         int shuffledY[] = shuffle(matrixHeight, randomCoordinates);
 

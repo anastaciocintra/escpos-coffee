@@ -31,7 +31,7 @@ go to oss.sonatype.org
    promote... wait
    release ... wait some hours
    test <putting on dependencies>
-on github
+on github (after oss part)
    pull request of the released branch
    create a new release
 
