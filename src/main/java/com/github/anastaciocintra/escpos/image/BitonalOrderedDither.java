@@ -5,7 +5,10 @@
 package com.github.anastaciocintra.escpos.image;
 
 import static java.lang.Math.round;
+
+import java.util.HashSet;
 import java.util.Random;
+import java.util.Set;
 
 /**
  * Implements ordered dithering based on a <code>ditherMatrix</code> <p>
@@ -67,8 +70,8 @@ public class BitonalOrderedDither extends Bitonal{
         float positionValue = (float)thresholdMin;
 
         Random randomCoordinates = new Random(1);
-        int shuffledX[] = randomCoordinates.ints(0, matrixWidth).distinct().limit(matrixWidth).toArray();
-        int shuffledY[] = randomCoordinates.ints(0, matrixHeight).distinct().limit(matrixHeight).toArray();
+        int shuffledX[] = shuffle(matrixWidth, randomCoordinates);
+        int shuffledY[] = shuffle(matrixHeight, randomCoordinates);
 
         for(int x = 0; x < matrixWidth; x++){
             for(int y = 0; y < matrixHeight; y++){
@@ -76,6 +79,21 @@ public class BitonalOrderedDither extends Bitonal{
                 positionValue+=valueToBeAddedOnEachPosition;
             }
         }
+    }
+    private int[] shuffle(int size,Random random){
+        Set<Integer> set = new HashSet<>();
+        int intArray[] = new int[size];
+        int i = 0;
+        while(set.size() < size){
+            int val = random.nextInt(size);
+            if(set.contains(val)){
+                continue;
+            }
+            set.add(val);
+            intArray[i++] = val;
+        }
+
+        return intArray;
     }
     /**
      * Creates a new BitonalOrderedDither with default values.

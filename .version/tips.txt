@@ -31,8 +31,13 @@ go to oss.sonatype.org
    promote... wait
    release ... wait some hours
    test <putting on dependencies>
-on github
+on github (after oss part)
    pull request of the released branch
    create a new release
 
 ------ escpos-samples production
+create a branch with name of actual version from master
+ex master to 4.0.2
+// the actual version is on master branch
+same on .version/changeversion.sh
+change version on wiki
