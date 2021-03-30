@@ -36,3 +36,8 @@ on github
    create a new release
 
 ------ escpos-samples production
+create a branch with name of actual version from master
+ex master to 4.0.2
+// the actual version is on master branch
+same on .version/changeversion.sh
+change version on wiki

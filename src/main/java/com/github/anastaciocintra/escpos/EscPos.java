@@ -379,7 +379,7 @@ public class EscPos implements Closeable, Flushable, EscPosConst {
      */
     public EscPos writeLF(Style style, String text) throws UnsupportedEncodingException, IOException {
         write(style, text);
-        write(10);
+        write(LF);
         return this;
     }
 
@@ -478,23 +478,17 @@ public class EscPos implements Closeable, Flushable, EscPosConst {
      * @exception IOException if an I/O error occurs.
      * @exception IllegalArgumentException if nLines out of range 0 to 255
      */
-    public EscPos feed(Style style, int nLines) throws IOException, IllegalArgumentException {
+    public EscPos feed(Style style, int nLines) throws IOException, IllegalArgumentException{
         if (nLines < 1 || nLines > 255) {
             throw new IllegalArgumentException("nLines must be between 1 and 255");
         }
-        if(nLines == 1){
+        byte[] configBytes = style.getConfigBytes();
+        write(configBytes, 0, configBytes.length);
+        for(int n = 0; n < nLines; n++){
             write(LF);
-        }else {
-            byte[] configBytes = style.getConfigBytes();
-            write(configBytes, 0, configBytes.length);
-            write(ESC);
-            write('d');
-            write(nLines);
         }
         return this;
-
     }
-
     /**
      * Call feed with default style.
      *
