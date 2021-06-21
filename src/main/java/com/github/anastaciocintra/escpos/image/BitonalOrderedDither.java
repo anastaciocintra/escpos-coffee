@@ -18,11 +18,11 @@ import java.util.Set;
  * or the class can mount this array to the automatic values.
  */
 public class BitonalOrderedDither extends Bitonal{
-    private final String ErrorMatrixSize = "matrixWidth and matrixHeight must be > 0";
-    private final String ErrorthreshoudVal = "values of threshould must be between 0 and 255";
-    private int[][] ditherMatrix;
-    private final int matrixWidth;
-    private final int matrixHeight;
+    protected final String ErrorMatrixSize = "matrixWidth and matrixHeight must be > 0";
+    protected final String ErrorthreshoudVal = "values of threshould must be between 0 and 255";
+    protected int[][] ditherMatrix;
+    protected final int matrixWidth;
+    protected final int matrixHeight;
 
     
     /**

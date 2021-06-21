@@ -119,9 +119,9 @@ public class EscPos implements Closeable, Flushable, EscPosConst {
         }
     }
 
-    private OutputStream outputStream;
-    private String charsetName;
-    private Style style;
+    protected OutputStream outputStream;
+    protected String charsetName;
+    protected Style style;
 
     /**
      * creates an instance based on outputStream.

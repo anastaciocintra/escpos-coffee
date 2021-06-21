@@ -20,8 +20,8 @@ import java.util.logging.Logger;
  * you need to create another instance to send data to the printer.
  */
 public class TcpIpOutputStream  extends PipedOutputStream {
-    private final PipedInputStream pipedInputStream;
-    private final Thread threadPrint;
+    protected final PipedInputStream pipedInputStream;
+    protected final Thread threadPrint;
 
 
 

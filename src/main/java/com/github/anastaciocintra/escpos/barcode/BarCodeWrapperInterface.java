@@ -4,6 +4,9 @@
  */
 package com.github.anastaciocintra.escpos.barcode;
 
-public interface BarCodeWrapperInterface {
+import com.github.anastaciocintra.escpos.EscPosConst;
+
+public interface BarCodeWrapperInterface<T> {
     public byte[] getBytes(String data);
+    public T setJustification(EscPosConst.Justification justification);
 }

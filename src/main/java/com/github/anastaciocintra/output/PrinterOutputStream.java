@@ -28,8 +28,8 @@ import javax.print.SimpleDoc;
  */
 public class PrinterOutputStream extends PipedOutputStream {
 
-    private final PipedInputStream pipedInputStream;
-    private final Thread threadPrint;
+    protected final PipedInputStream pipedInputStream;
+    protected final Thread threadPrint;
 
     /**
      * creates one instance of PrinterOutputStream.

@@ -9,7 +9,7 @@ import java.awt.image.BufferedImage;
  */
 public class CoffeeImageImpl implements CoffeeImage {
 
-    private BufferedImage image;
+    protected BufferedImage image;
     public CoffeeImageImpl(BufferedImage image) {
         this.image = image;
     }

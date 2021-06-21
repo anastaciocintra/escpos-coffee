@@ -79,13 +79,13 @@ public class PDF417 implements EscPosConst, BarCodeWrapperInterface{
     
     
     
-    private Justification justification;    
-    private int numberOfColumns;
-    private int numberOfRows;
-    private int width;
-    private int height;
-    private PDF417ErrorLevel errorLevel;
-    private PDF417Option option;
+    protected Justification justification;
+    protected int numberOfColumns;
+    protected int numberOfRows;
+    protected int width;
+    protected int height;
+    protected PDF417ErrorLevel errorLevel;
+    protected PDF417Option option;
 
 
     

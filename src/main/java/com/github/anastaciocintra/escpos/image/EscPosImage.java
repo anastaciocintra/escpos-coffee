@@ -12,13 +12,13 @@ import java.util.List;
  * Supply raster patterns images 
  */
 public class EscPosImage {
-    private final CoffeeImage image;
-    
-    private final Bitonal bitonalAlgorithm;
-    
-    private ByteArrayOutputStream baCachedEscPosRaster = new ByteArrayOutputStream();
-    private List< ByteArrayOutputStream > CashedEscPosRasterRows_8 = new ArrayList();
-    private List< ByteArrayOutputStream > CachedEscPosRasterRows_24 = new ArrayList();
+    protected final CoffeeImage image;
+
+    protected final Bitonal bitonalAlgorithm;
+
+    protected ByteArrayOutputStream baCachedEscPosRaster = new ByteArrayOutputStream();
+    protected List< ByteArrayOutputStream > CashedEscPosRasterRows_8 = new ArrayList();
+    protected List< ByteArrayOutputStream > CachedEscPosRasterRows_24 = new ArrayList();
 
 
     /**
@@ -83,7 +83,7 @@ public class EscPosImage {
      * @param bitsPerColumn_8_or_24 possible values are 8 or 24
      * @return a list of rows in raster pattern
      */
-    private  List< ByteArrayOutputStream > image2Rows(int bitsPerColumn_8_or_24){
+    protected  List< ByteArrayOutputStream > image2Rows(int bitsPerColumn_8_or_24){
         List< ByteArrayOutputStream > lRasterRows = new ArrayList();
         
         
@@ -155,7 +155,7 @@ public class EscPosImage {
      * @see #EscPosImage(CoffeeImage, Bitonal) (BufferedImage, Bitonal)  
      * @see Bitonal#getBitonalVal(CoffeeImage, int, int)  
      */
-    private int getBitonalVal(int x, int y) {
+    protected int getBitonalVal(int x, int y) {
         return bitonalAlgorithm.getBitonalVal(image, x, y);
         
     }
@@ -164,7 +164,7 @@ public class EscPosImage {
      * transform RGB image in raster format.
      * @return raster byte array 
      */
-    private ByteArrayOutputStream image2EscPosRaster(){
+    protected ByteArrayOutputStream image2EscPosRaster(){
         ByteArrayOutputStream byteArray = new ByteArrayOutputStream();
         int  Byte;
         int  bit;

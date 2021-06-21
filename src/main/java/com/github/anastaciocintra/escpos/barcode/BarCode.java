@@ -140,12 +140,12 @@ public class BarCode implements EscPosConst, BarCodeWrapperInterface{
     }
     
     
-    private BarCodeSystem sytem;
-    private int width;
-    private int height;
-    private BarCodeHRIPosition HRIPosition;
-    private BarCodeHRIFont HRIFont;
-    private Justification justification;
+    protected BarCodeSystem sytem;
+    protected int width;
+    protected int height;
+    protected BarCodeHRIPosition HRIPosition;
+    protected BarCodeHRIFont HRIFont;
+    protected Justification justification;
     
 
 

@@ -82,15 +82,15 @@ public class Style implements EscPosConst {
         }
     }
 
-    private FontName fontName;
-    private boolean bold;
-    private Underline underline;
-    private FontSize fontWidth;
-    private FontSize fontHeight;
-    private Justification justification;
-    private boolean defaultLineSpacing;
-    private int lineSpacing;
-    private ColorMode colorMode;
+    protected FontName fontName;
+    protected boolean bold;
+    protected Underline underline;
+    protected FontSize fontWidth;
+    protected FontSize fontHeight;
+    protected Justification justification;
+    protected boolean defaultLineSpacing;
+    protected int lineSpacing;
+    protected ColorMode colorMode;
 
     /**
      * creates Style object with default values.
