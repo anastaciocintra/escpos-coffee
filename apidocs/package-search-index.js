@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"com.github.anastaciocintra.escpos"},{"l":"com.github.anastaciocintra.escpos.barcode"},{"l":"com.github.anastaciocintra.escpos.image"},{"l":"com.github.anastaciocintra.output"}]

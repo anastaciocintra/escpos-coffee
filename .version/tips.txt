@@ -21,6 +21,7 @@ go to "production part"
 ------ production
 (delete apidocs folder)?
 run mvn javadoc:javadoc
+mv target/site/apidocs/ .
 commit / push
 whait travis ... some minutes
 go to oss.sonatype.org
