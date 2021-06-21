@@ -31,8 +31,8 @@ public class GraphicsImageWrapper implements EscPosConst, ImageWrapperInterface{
         }
     }
     
-    private Justification justification;
-    GraphicsImageBxBy graphicsImageBxBy;
+    protected Justification justification;
+    protected GraphicsImageBxBy graphicsImageBxBy;
 
 
     public GraphicsImageWrapper(){

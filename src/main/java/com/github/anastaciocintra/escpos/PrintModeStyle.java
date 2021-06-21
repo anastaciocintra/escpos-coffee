@@ -31,12 +31,12 @@ public class PrintModeStyle implements EscPosConst{
         }
     }
 
-    private FontName fontName;
-    private boolean bold;
-    private boolean underline;
-    private boolean doubleWidth;
-    private boolean doubleHeight;
-    private Justification justification;
+    protected FontName fontName;
+    protected boolean bold;
+    protected boolean underline;
+    protected boolean doubleWidth;
+    protected boolean doubleHeight;
+    protected Justification justification;
 
 
     /**

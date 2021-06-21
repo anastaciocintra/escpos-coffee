@@ -33,9 +33,9 @@ public class BitImageWrapper implements ImageWrapperInterface, EscPosConst{
     }
     
     
-    private Justification justification;
-    
-    private BitImageMode mode;
+    protected Justification justification;
+
+    protected BitImageMode mode;
 
     
     

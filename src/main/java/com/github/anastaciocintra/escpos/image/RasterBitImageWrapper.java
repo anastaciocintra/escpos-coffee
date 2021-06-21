@@ -29,8 +29,8 @@ public class RasterBitImageWrapper implements EscPosConst, ImageWrapperInterface
         }
     }
     
-    private Justification justification;
-    private RasterBitImageMode rasterBitImageMode;
+    protected Justification justification;
+    protected RasterBitImageMode rasterBitImageMode;
 
 
     public RasterBitImageWrapper(){

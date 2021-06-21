@@ -8,7 +8,7 @@ package com.github.anastaciocintra.escpos.image;
  * Implements bitonal using one threshold value.
  */
 public class BitonalThreshold extends Bitonal{
-    private final int threshold;
+    protected final int threshold;
     
     /**
      * construct BitonalThreshold

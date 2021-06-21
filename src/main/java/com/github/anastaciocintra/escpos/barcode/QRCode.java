@@ -43,10 +43,10 @@ public class QRCode implements EscPosConst, BarCodeWrapperInterface{
         }
     }
     
-    private Justification justification;    
-    private QRModel model;
-    private int size;
-    private QRErrorCorrectionLevel errorCorrectionLevel;
+    protected Justification justification;
+    protected QRModel model;
+    protected int size;
+    protected QRErrorCorrectionLevel errorCorrectionLevel;
     
     public QRCode(){
         justification = Justification.Left_Default;

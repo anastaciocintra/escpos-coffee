@@ -5,8 +5,12 @@
 package com.github.anastaciocintra.escpos.image;
 
 
-public interface ImageWrapperInterface {
+import com.github.anastaciocintra.escpos.EscPosConst;
+
+public interface ImageWrapperInterface<T> {
         
     public byte[] getBytes(EscPosImage image);
-    
+    public T setJustification(EscPosConst.Justification justification);
+
+
 }
