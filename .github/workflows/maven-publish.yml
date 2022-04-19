@@ -26,7 +26,7 @@ jobs:
         settings-path: ${{ github.workspace }} # location for the settings.xml file
 
     - name: Build with Maven
-      run: mvn deploy -s $GITHUB_WORKSPACE/.travis/settings.xml
+      run: mvn clean deploy -s $GITHUB_WORKSPACE/.travis/settings.xml
       env:
         GPG_EXECUTABLE: ${{ secrets.GPG_EXECUTABLE }}
         GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
