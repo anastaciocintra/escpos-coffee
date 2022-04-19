@@ -22,6 +22,10 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         cache: maven
+    - name: Configure GPG Key
+      run: echo -n "$GPG_SIGNING_KEY" | base64 --decode | gpg --import
+      env:
+        GPG_SIGNING_KEY: ${{ secrets.GPG_SIGNING_KEY }}
     - name: Build with Maven
       run: mvn -B deploy --file pom.xml -s $GITHUB_WORKSPACE/.travis/settings.xml
       env:
