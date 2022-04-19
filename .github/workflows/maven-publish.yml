@@ -27,9 +27,18 @@ jobs:
 
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+      
+    - name: Configure GPG Key
+      run: echo -n "$GPG_SIGNING_KEY" | base64 --decode | gpg --import
+      env:
+        GPG_SIGNING_KEY: ${{ secrets.GPG_SIGNING_KEY }}
 
     - name: Publish to GitHub Packages Apache Maven
       run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
       env:
-        GITHUB_TOKEN: ${{ github.token }}
+        GPG_EXECUTABLE: ${{ secrets.GPG_EXECUTABLE }}
+        GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+        GPG_SIGNING_KEY: ${{secrets.GPG_SIGNING_KEY}}
+        SONATYPE_PASSWORD: ${{secrets.SONATYPE_PASSWORD}}
+        SONATYPE_USERNAME: ${{secrets.SONATYPE_USERNAME}}
         
