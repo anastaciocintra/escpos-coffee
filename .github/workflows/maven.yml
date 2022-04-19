@@ -23,4 +23,10 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
-      run: mvn -B deploy --file pom.xml
+      run: mvn -B deploy --file pom.xml -s $GITHUB_WORKSPACE/.travis/settings.xml
+      env:
+        GPG_EXECUTABLE: ${{ secrets.GPG_EXECUTABLE }}
+        GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+        GPG_SIGNING_KEY: ${{secrets.GPG_SIGNING_KEY}}
+        SONATYPE_PASSWORD: ${{secrets.SONATYPE_PASSWORD}}
+        SONATYPE_USERNAME: ${{secrets.SONATYPE_USERNAME}}
