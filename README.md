@@ -48,7 +48,7 @@ Download code and binaries from the [last release of escpos-coffee](https://gith
 <dependency>
   <groupId>com.github.anastaciocintra</groupId>
   <artifactId>escpos-coffee</artifactId>
-  <version>4.1.0</version>
+  <version>4.2.0-SNAPSHOT</version>
 </dependency>
 ```
 
@@ -64,7 +64,7 @@ repositories {
 Step 2. Add the dependency
 ```
 dependencies {
-    implementation 'com.github.anastaciocintra:escpos-coffee:4.1.0'
+    implementation 'com.github.anastaciocintra:escpos-coffee:4.2.0-SNAPSHOT'
 }
 ```
 

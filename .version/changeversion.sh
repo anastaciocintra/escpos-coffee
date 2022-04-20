@@ -1,5 +1,5 @@
-new="4.1.0"
-old="4.1.0-SNAPSHOT"
+new="4.2.0-SNAPSHOT"
+old="4.1.0"
 
 find ../ -type f \( -name "pom.xml" \) \
   -exec sed -i -e "s/<revision>$old<\/revision>/<revision>$new<\/revision>/g" {} \;
