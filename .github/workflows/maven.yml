@@ -24,7 +24,7 @@ jobs:
       env:
         GPG_SIGNING_KEY: ${{ secrets.GPG_SIGNING_KEY }}
     - name: Build with Maven
-      run: mvn -B clean deploy --file pom.xml -s $GITHUB_WORKSPACE/.ci/settings.xml
+      run: mvn -B clean deploy --file pom.xml -s $GITHUB_WORKSPACE/.m2/settings.xml
       env:
         GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
         GPG_SIGNING_KEY: ${{secrets.GPG_SIGNING_KEY}}
