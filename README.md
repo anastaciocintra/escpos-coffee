@@ -3,21 +3,22 @@
 [https://github.com/anastaciocintra/escpos-coffee](https://github.com/anastaciocintra/escpos-coffee)
 
 ![GitHub](https://img.shields.io/github/license/anastaciocintra/escpos-coffee)
-[![Java CI with Maven](https://github.com/anastaciocintra/escpos-coffee/actions/workflows/maven.yml/badge.svg)](https://github.com/anastaciocintra/escpos-coffee/actions/workflows/maven.yml)![Maven Central](https://img.shields.io/maven-central/v/com.github.anastaciocintra/escpos-coffee)
+[![Java CI with Maven](https://github.com/anastaciocintra/escpos-coffee/actions/workflows/maven.yml/badge.svg)](https://github.com/anastaciocintra/escpos-coffee/actions/workflows/maven.yml)
+[![Maven Central](https://img.shields.io/maven-central/v/com.github.anastaciocintra/escpos-coffee.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22com.github.anastaciocintra%22%20AND%20a:%22escpos-coffee%22)
 ![Sonatype Nexus (Snapshots)](https://img.shields.io/nexus/s/com.github.anastaciocintra/escpos-coffee?server=https%3A%2F%2Foss.sonatype.org)
+
 
 Java library for ESC/POS printer commands. Can send text, images and barcodes to the printer.
 All commands are send to one OutputStream, then you can redirect to printer, file or network.
 
-## Platforms
-| Platform | Compatibility |
-| --- | --- |
-| Linux | yes |
-| FreeBsd | yes |
-| Windows | yes |
-| MacOS | yes |
-| Android Mobile | yes |
-| iOS Mobile | no |
+## Compatible / Tested platforms
+
+* Linux 
+* FreeBsd 
+* Windows
+* MacOS
+* Android Mobile 
+
 
 ## [Wiki](https://github.com/anastaciocintra/escpos-coffee/wiki)
 
