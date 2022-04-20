@@ -1,41 +1,55 @@
-
 # escpos-coffee
+
+[https://github.com/anastaciocintra/escpos-coffee](https://github.com/anastaciocintra/escpos-coffee)
+
+![GitHub](https://img.shields.io/github/license/anastaciocintra/escpos-coffee)
+[![Java CI with Maven](https://github.com/anastaciocintra/escpos-coffee/actions/workflows/maven.yml/badge.svg)](https://github.com/anastaciocintra/escpos-coffee/actions/workflows/maven.yml)![Maven Central](https://img.shields.io/maven-central/v/com.github.anastaciocintra/escpos-coffee)
+![Sonatype Nexus (Snapshots)](https://img.shields.io/nexus/s/com.github.anastaciocintra/escpos-coffee?server=https%3A%2F%2Foss.sonatype.org)
 
 Java library for ESC/POS printer commands. Can send text, images and barcodes to the printer.
 All commands are send to one OutputStream, then you can redirect to printer, file or network.
+
 ## [Wiki](https://github.com/anastaciocintra/escpos-coffee/wiki)
 
+## [Code Examples](https://github.com/anastaciocintra/escpos-coffee-samples) 
 
 
 
-![GitHub](https://img.shields.io/github/license/anastaciocintra/escpos-coffee)
-![Maven Central](https://img.shields.io/maven-central/v/com.github.anastaciocintra/escpos-coffee)
-![Sonatype Nexus (Snapshots)](https://img.shields.io/nexus/s/com.github.anastaciocintra/escpos-coffee?server=https%3A%2F%2Foss.sonatype.org)
 
 ## Getting Started
-The EscPos works with OutputStream to send its commands. Here we have two examples that show different output streams.
 
-Creating printer output stream:
+sending "hello world" to the printer
+
 ```java
-  PrintService printService = PrinterOutputStream.getPrintServiceByName("printerName");
-  PrinterOutputStream printerOutputStream = new PrinterOutputStream(printService);
-  EscPos escpos = new EscPos(printerOutputStream);
-  escpos.writeLF("Hello Wold");
-  escpos.feed(5);
-  escpos.cut(EscPos.CutMode.FULL);
-  escpos.close();
+import com.github.anastaciocintra.escpos.EscPos;
+import com.github.anastaciocintra.output.PrinterOutputStream;
+
+import javax.print.PrintService;
+import java.io.IOException;
+
+public class HelloWorld {
+    public static void main(String[] args) throws IOException {
+        if(args.length!=1){
+            System.out.println("Usage: java -jar escpos-simple.jar (\"printer name\")");
+            System.out.println("Printer list to use:");
+            String[] printServicesNames = PrinterOutputStream.getListPrintServicesNames();
+            for(String printServiceName: printServicesNames){
+                System.out.println(printServiceName);
+            }
+
+            System.exit(0);
+        }
+
+        PrintService printService = PrinterOutputStream.getPrintServiceByName(args[0]);
+        PrinterOutputStream printerOutputStream = new PrinterOutputStream(printService);
+        EscPos escpos = new EscPos(printerOutputStream);
+        escpos.writeLF("Hello world");
+        escpos.feed(5).cut(EscPos.CutMode.FULL);
+        escpos.close();
+    }
+}
 
 ```
-
-Sending hello world to system out:
-```java
-  EscPos escpos = new EscPos(System.out);
-  escpos.writeLF("Hello Wold");
-  escpos.feed(5);
-  escpos.cut(EscPos.CutMode.FULL);
-  escpos.close();
-```
-See on samples directory to view more codes.
 
 
 
