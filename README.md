@@ -62,10 +62,6 @@ public class HelloWorld {
 ```
 
 
-
-### Downloading
-Download code and binaries from the [last release of escpos-coffee](https://github.com/anastaciocintra/escpos-coffee/releases/latest).
-
 ### Installation with Maven 
 
 ```xml
@@ -94,6 +90,9 @@ dependencies {
 
 
 ### Installation without Maven or Gradle
+
+Download code from the [last release of escpos-coffee](https://github.com/anastaciocintra/escpos-coffee/releases/latest).
+
 
 The project can be compiled with the below command:
 
