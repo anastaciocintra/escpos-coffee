@@ -36,6 +36,9 @@ import com.github.anastaciocintra.escpos.EscPos;
 import com.github.anastaciocintra.output.PrinterOutputStream;
 
 import javax.print.PrintService;
+import javax.print.attribute.HashPrintRequestAttributeSet;
+import javax.print.attribute.PrintRequestAttributeSet;
+import javax.print.attribute.standard.JobName;
 import java.io.IOException;
 
 public class HelloWorld {
@@ -53,6 +56,10 @@ public class HelloWorld {
 
         PrintService printService = PrinterOutputStream.getPrintServiceByName(args[0]);
         PrinterOutputStream printerOutputStream = new PrinterOutputStream(printService);
+        PrintRequestAttributeSet attributes = new HashPrintRequestAttributeSet();
+        attributes.add(new JobName("your job name", null));
+        printerOutputStream.setPrintRequestAttributeSet(attributes);
+        
         EscPos escpos = new EscPos(printerOutputStream);
         escpos.writeLF("Hello world");
         escpos.feed(5).cut(EscPos.CutMode.FULL);

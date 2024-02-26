@@ -18,6 +18,7 @@ import javax.print.PrintException;
 import javax.print.PrintService;
 import javax.print.PrintServiceLookup;
 import javax.print.SimpleDoc;
+import javax.print.attribute.PrintRequestAttributeSet;
 
 /**
  * Supply OutputStream to the printer.
@@ -30,6 +31,7 @@ public class PrinterOutputStream extends PipedOutputStream {
 
     protected final PipedInputStream pipedInputStream;
     protected final Thread threadPrint;
+    private PrintRequestAttributeSet printRequestAttributeSet=null;
 
     /**
      * creates one instance of PrinterOutputStream.
@@ -57,7 +59,7 @@ public class PrinterOutputStream extends PipedOutputStream {
                 Doc d = new SimpleDoc(pipedInputStream, df, null);
 
                 DocPrintJob job = printService.createPrintJob();
-                job.print(d, null);
+                job.print(d, this.printRequestAttributeSet);
             } catch (PrintException ex) {
                 throw new RuntimeException(ex);
             }
@@ -164,4 +166,18 @@ public class PrinterOutputStream extends PipedOutputStream {
         return foundService;
     }
 
+    /**
+     * Set printer request attributes.
+     * <p>
+     * For example Job name:
+     * <i>attributes.add(new JobName("your job name", null));</i>
+     * Null by default
+     * Could be set before each printer job
+     * Save previous state attributes for next jobs.
+     * </p>
+     * @param attributes printer request attributes.
+     */
+    public void setPrintRequestAttributeSet(PrintRequestAttributeSet attributes){
+        this.printRequestAttributeSet = attributes;
+    }
 }
